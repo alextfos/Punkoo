@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loading">Cargando</string>
+    <string name="error_unknown_title">Error</string>
+    <string name="error_unknown_text">Lo sentimos, este contenido no está disponible en este momento</string>
+    <string name="error_empty_title">Información no disponible</string>
+    <string name="error_empty_text">Lo sentimos, ha habido un problema cargando la información</string>
+    <string name="error_retry">Intentar de nuevo</string>
+    <string name="error_image_description">Error imagen</string>
+    <string name="no_results_available">No hay resultados disponibles</string>
+</resources>
