@@ -9,7 +9,7 @@ import timber.log.Timber
 
 
 @HiltAndroidApp
-class SampleApplication : Application() {
+class PunkooApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

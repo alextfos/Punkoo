@@ -1,8 +1,7 @@
 package com.alextfos.punkoo.di
 
 import android.content.Context
-import com.alextfos.feature.data.FeatureRepository
-import com.alextfos.feature.data.api.FeatureApi
+import com.alextfos.search.data.api.SearchApi
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
@@ -29,12 +28,7 @@ import javax.inject.Singleton
 class CommonModule {
 
     private val DEFAULT_TIME_OUT: Long = 10
-
-    @Singleton
-    @Provides
-    fun providesFeatureRepository(
-        featureApi: FeatureApi
-    ) = FeatureRepository(featureApi)
+    private val versionApi = "/v2"
 
     @Singleton
     @Provides
@@ -46,7 +40,7 @@ class CommonModule {
         okHttpClient: OkHttpClient
     ): Retrofit {
         val retrofitBuilder = Retrofit.Builder()
-            .baseUrl(BuildConfig.CONFIG_BASE_URL)
+            .baseUrl(BuildConfig.CONFIG_BASE_URL + versionApi)
             .addConverterFactory(MoshiConverterFactory.create(providesMoshi()))
             .client(okHttpClient)
         return retrofitBuilder.build()
@@ -82,13 +76,6 @@ class CommonModule {
 
         return okHttpClientBuilder.build()
     }
-
-    @Provides
-    @Singleton
-    fun providesFeatureApi(
-        retrofit: Retrofit
-    ): FeatureApi =
-        retrofit.create(FeatureApi::class.java)
 
     private fun providesMoshi(): Moshi =
         Moshi.Builder()

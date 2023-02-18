@@ -1,4 +1,4 @@
-package com.alextfos.feature
+package com.alextfos.search
 
 import timber.log.Timber
 
