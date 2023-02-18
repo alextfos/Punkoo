@@ -1,7 +1,6 @@
 package com.alextfos.punkoo.di
 
 import android.content.Context
-import com.alextfos.search.data.api.SearchApi
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
@@ -27,7 +26,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class CommonModule {
 
-    private val DEFAULT_TIME_OUT: Long = 10
+    private val defaultTimeOut: Long = 10
     private val versionApi = "/v2"
 
     @Singleton
@@ -71,8 +70,8 @@ class CommonModule {
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
             })
-            .readTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS)
-            .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS)
+            .readTimeout(defaultTimeOut, TimeUnit.SECONDS)
+            .connectTimeout(defaultTimeOut, TimeUnit.SECONDS)
 
         return okHttpClientBuilder.build()
     }

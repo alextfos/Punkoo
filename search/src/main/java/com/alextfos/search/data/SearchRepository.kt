@@ -1,7 +1,7 @@
 package com.alextfos.search.data
 
 import com.alextfos.search.data.api.SearchApi
-import com.alextfos.punkoo.common.data.extensions.safeBody
+import com.alextfos.punkoo.common.ext.safeBody
 import com.alextfos.punkoo.common.exception.EmptyListException
 import com.alextfos.search.data.dto.BeerDto
 

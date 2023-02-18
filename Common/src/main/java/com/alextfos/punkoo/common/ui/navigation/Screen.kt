@@ -7,7 +7,7 @@ sealed class Screen(
     val argument: List<NamedNavArgument>
 ) {
     object Main : Screen(
-        route = "loading",
+        route = "main",
         argument = emptyList()
     )
 }

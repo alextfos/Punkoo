@@ -1,4 +1,4 @@
-package com.alextfos.punkoo.common.data.extensions
+package com.alextfos.punkoo.common.ext
 
 import retrofit2.HttpException
 import retrofit2.Response

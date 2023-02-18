@@ -1,4 +1,4 @@
-package com.alextfos.punkoo.core.ui.navigation
+package com.alextfos.punkoo.common.ui.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
