@@ -1,13 +1,10 @@
 package com.alextfos.punkoo.di
 
 import android.content.Context
-import com.alextfos.feature.data.FeatureRepository
-import com.alextfos.feature.data.api.FeatureApi
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.alextfos.punkoo.BuildConfig
-import com.alextfos.punkoo.common.domain.entity.AppSession
 import com.alextfos.punkoo.common.data.interceptors.ConnectivityInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -28,17 +25,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class CommonModule {
 
-    private val DEFAULT_TIME_OUT: Long = 10
-
-    @Singleton
-    @Provides
-    fun providesFeatureRepository(
-        featureApi: FeatureApi
-    ) = FeatureRepository(featureApi)
-
-    @Singleton
-    @Provides
-    fun providesAppSession(): AppSession = AppSession()
+    private val defaultTimeOut: Long = 10
 
     @Provides
     @Singleton
@@ -72,23 +59,16 @@ class CommonModule {
 
 
         okHttpClientBuilder
-            .addInterceptor(chuckerInterceptor)
-            .addInterceptor(ConnectivityInterceptor(context))
+            //.addInterceptor(chuckerInterceptor) TODO not working
+            /*.addInterceptor(ConnectivityInterceptor(context))
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
-            })
-            .readTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS)
-            .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS)
+            })*/
+            .readTimeout(defaultTimeOut, TimeUnit.SECONDS)
+            .connectTimeout(defaultTimeOut, TimeUnit.SECONDS)
 
         return okHttpClientBuilder.build()
     }
-
-    @Provides
-    @Singleton
-    fun providesFeatureApi(
-        retrofit: Retrofit
-    ): FeatureApi =
-        retrofit.create(FeatureApi::class.java)
 
     private fun providesMoshi(): Moshi =
         Moshi.Builder()
