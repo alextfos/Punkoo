@@ -2,6 +2,7 @@ package com.alextfos.punkoo.di
 
 import com.alextfos.search.data.SearchRepository
 import com.alextfos.search.data.api.SearchApi
+import com.alextfos.search.domain.usecase.GetRandomUseCase
 import com.alextfos.search.domain.usecase.SearchUseCase
 import dagger.Module
 import dagger.Provides
@@ -17,6 +18,10 @@ class SearchModule {
     @Provides
     @Singleton
     fun provideSearchUseCase(searchRepository: SearchRepository) = SearchUseCase(searchRepository)
+
+    @Provides
+    @Singleton
+    fun provideRandomUseCase(searchRepository: SearchRepository) = GetRandomUseCase(searchRepository)
 
     @Singleton
     @Provides

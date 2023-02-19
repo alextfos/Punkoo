@@ -9,6 +9,7 @@ import com.alextfos.punkoo.common.ui.navigation.CreateNavigation
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
 import com.alextfos.search.ui.addSearchScreen
+import com.alextfos.search.ui.random.addRandomScreen
 
 
 @Composable
@@ -23,6 +24,7 @@ fun PunkooApp(
                 navController,
             ) {
                 it.addSearchScreen(navController)
+                it.addRandomScreen(navController)
             }
         }
     }

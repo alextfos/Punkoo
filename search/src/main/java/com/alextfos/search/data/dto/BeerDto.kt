@@ -10,7 +10,7 @@ data class BeerDto (
 	@Json(name="first_brewed") val first_brewed : String?,
 	@Json(name="description") val description : String?,
 	@Json(name="image_url") val image_url : String?,
-	@Json(name="abv") val abv : Int?,
+	@Json(name="abv") val abv : Float?,
 	@Json(name="ibu") val ibu : Int?,
 	@Json(name="target_fg") val target_fg : Int?,
 	@Json(name="target_og") val target_og : Int?,

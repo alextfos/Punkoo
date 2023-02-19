@@ -12,4 +12,7 @@ interface SearchApi {
         @Query("page") page: Int,
         @Query("per_page") pageSize: Int
     ): Response<List<BeerDto>>
+
+  @GET("$versionApi/beers/random")
+  suspend fun getRandomBeer(): Response<List<BeerDto>>
 }
