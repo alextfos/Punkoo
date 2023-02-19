@@ -3,16 +3,15 @@
 - Cada grupo de features se crea en un módulo separado con todas las capas definidas en Clean Architecture
 
 # TODO
-## Pomodoro 2
-- Pantalla de resultados simple
-- Caso de Uso de búsqueda
-- Item de resultado
-- Llamar al endpoint de random para ver algo
 
-## Pomodoro 4
-- Tests de lo implementado hasta el momento
+## Pomodoro 1
+- EditText con el trigger para filtrar en cada cambio
+
+## Pomodoro 2
+- Ejecutar el usecase de búsqueda con el runUseCase
 
 ## Pomodoro 3
-- EditText con el trigger para buscar
 - Detalle de cerveza
-- Ejecutar el usecase de búsqueda con el runUseCase
+- Acabar pantalla de Random
+- Estilos
+- Tests de los mappers y de los ViewModels

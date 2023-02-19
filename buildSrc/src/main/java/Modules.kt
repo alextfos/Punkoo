@@ -1,5 +1,5 @@
 object Modules {
     const val common = ":common"
     const val styles = ":styles"
-    const val search = ":search"
+    const val beer = ":beer"
 }

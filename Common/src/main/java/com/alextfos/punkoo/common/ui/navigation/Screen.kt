@@ -10,4 +10,8 @@ sealed class Screen(
         route = "search",
         argument = emptyList()
     )
+    object Random : Screen(
+        route = "random",
+        argument = emptyList()
+    )
 }

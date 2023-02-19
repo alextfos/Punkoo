@@ -59,11 +59,11 @@ class CommonModule {
 
 
         okHttpClientBuilder
-            //.addInterceptor(chuckerInterceptor) TODO not working
-            /*.addInterceptor(ConnectivityInterceptor(context))
+            .addInterceptor(chuckerInterceptor)
+            .addInterceptor(ConnectivityInterceptor(context))
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
-            })*/
+            })
             .readTimeout(defaultTimeOut, TimeUnit.SECONDS)
             .connectTimeout(defaultTimeOut, TimeUnit.SECONDS)
 
