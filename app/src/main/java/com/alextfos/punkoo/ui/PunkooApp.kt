@@ -8,8 +8,8 @@ import androidx.navigation.compose.rememberNavController
 import com.alextfos.punkoo.common.ui.navigation.CreateNavigation
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
-import com.alextfos.search.ui.addSearchScreen
-import com.alextfos.search.ui.random.addRandomScreen
+import com.alextfos.beer.ui.search.addSearchScreen
+import com.alextfos.beer.ui.random.addRandomScreen
 
 
 @Composable

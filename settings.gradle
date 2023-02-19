@@ -16,4 +16,4 @@ rootProject.name = "Punkoo"
 include ':app'
 include ':common'
 include ':styles'
-include ':search'
+include ':beer'

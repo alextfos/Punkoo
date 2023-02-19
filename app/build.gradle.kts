@@ -94,7 +94,7 @@ android {
 dependencies {
     implementation(project(Modules.styles))
     api(project(Modules.common))
-    implementation(project(Modules.search))
+    implementation(project(Modules.beer))
 
     implementation(Material.material)
 
