@@ -5,7 +5,6 @@ import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.alextfos.punkoo.BuildConfig
-import com.alextfos.punkoo.common.domain.entity.AppSession
 import com.alextfos.punkoo.common.data.interceptors.ConnectivityInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -28,10 +27,6 @@ class CommonModule {
 
     private val defaultTimeOut: Long = 10
     private val versionApi = "/v2"
-
-    @Singleton
-    @Provides
-    fun providesAppSession(): AppSession = AppSession()
 
     @Provides
     @Singleton

@@ -23,4 +23,14 @@ class SearchRepository(
         }
         return result
     }
+
+    suspend fun searchRandom(
+        beerTokens: List<String>
+    ): List<BeerDto> {
+        val result = searchApi.getRandomBeerList().safeBody()
+        if (result.isEmpty()) {
+            throw EmptyListException("This result is empty")
+        }
+        return result
+    }
 }
