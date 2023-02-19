@@ -8,7 +8,7 @@ import com.alextfos.punkoo.common.ui.navigation.Screen
 
 fun NavGraphBuilder.addSearchScreen(navController: NavController) {
     composable(
-        route = Screen.Main.route
+        route = Screen.Search.route
     ) {
         ProgressBarFullScreen()
     }
