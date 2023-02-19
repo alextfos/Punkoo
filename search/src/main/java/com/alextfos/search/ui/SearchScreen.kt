@@ -10,6 +10,6 @@ fun NavGraphBuilder.addSearchScreen(navController: NavController) {
     composable(
         route = Screen.Search.route
     ) {
-        ProgressBarFullScreen()
+        SearchDrawer()
     }
 }

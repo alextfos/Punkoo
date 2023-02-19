@@ -1,36 +1,29 @@
 package com.alextfos.search.data
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.alextfos.search.data.api.SearchApi
-import com.alextfos.punkoo.common.ext.safeBody
-import com.alextfos.punkoo.common.exception.EmptyListException
-import com.alextfos.punkoo.common.ext.normalizeWithUnderScores
 import com.alextfos.search.data.dto.BeerDto
+import kotlinx.coroutines.flow.Flow
 
 class SearchRepository(
     private val searchApi: SearchApi,
 ) {
-    suspend fun searchBeer(
-        beerTokens: List<String>
-    ): List<BeerDto> {
-        val result = searchApi.searchBeers(
-            beerTokens = beerTokens.normalizeWithUnderScores(),
-            page = 1,
-            itemsByPage = 10
-        ).safeBody()
+    val pageSize = 10
+    val prefetchPercent = 1.5
 
-        if (result.isEmpty()) {
-            throw EmptyListException("This result is empty")
-        }
-        return result
-    }
-
-    suspend fun searchRandom(
+    fun searchBeer(
         beerTokens: List<String>
-    ): List<BeerDto> {
-        val result = searchApi.getRandomBeerList().safeBody()
-        if (result.isEmpty()) {
-            throw EmptyListException("This result is empty")
-        }
-        return result
+    ): Flow<PagingData<BeerDto>> {
+        return Pager(
+            PagingConfig(pageSize = pageSize, prefetchDistance = (pageSize * prefetchPercent).toInt())
+        ) {
+            SearchPagingSource(
+                pageSize = pageSize,
+                searchTokenList = beerTokens,
+                searchApi = searchApi
+            )
+        }.flow
     }
 }

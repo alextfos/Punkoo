@@ -15,3 +15,4 @@
 ## Pomodoro 3
 - EditText con el trigger para buscar
 - Detalle de cerveza
+- Ejecutar el usecase de búsqueda con el runUseCase

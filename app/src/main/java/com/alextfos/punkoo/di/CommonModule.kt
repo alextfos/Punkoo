@@ -26,7 +26,6 @@ import javax.inject.Singleton
 class CommonModule {
 
     private val defaultTimeOut: Long = 10
-    private val versionApi = "/v2"
 
     @Provides
     @Singleton
@@ -34,7 +33,7 @@ class CommonModule {
         okHttpClient: OkHttpClient
     ): Retrofit {
         val retrofitBuilder = Retrofit.Builder()
-            .baseUrl(BuildConfig.CONFIG_BASE_URL + versionApi)
+            .baseUrl(BuildConfig.CONFIG_BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(providesMoshi()))
             .client(okHttpClient)
         return retrofitBuilder.build()

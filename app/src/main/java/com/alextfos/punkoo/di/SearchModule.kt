@@ -2,6 +2,7 @@ package com.alextfos.punkoo.di
 
 import com.alextfos.search.data.SearchRepository
 import com.alextfos.search.data.api.SearchApi
+import com.alextfos.search.domain.usecase.SearchUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,6 +13,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class SearchModule {
+
+    @Provides
+    @Singleton
+    fun provideSearchUseCase(searchRepository: SearchRepository) = SearchUseCase(searchRepository)
+
     @Singleton
     @Provides
     fun providesSearchRepository(
