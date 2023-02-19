@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.alextfos.punkoo.common.ui.navigation.CreateNavigation
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
+import com.alextfos.search.ui.addSearchScreen
 
 @Composable
 fun PunkooApp(
@@ -35,8 +36,10 @@ private fun InitPunkooApp(
     PunkooTheme(ThemeType.LIGHT) {
         InitAppScaffold(scaffoldState) {
             CreateNavigation(
-                navController
-            )
+                navController,
+            ) {
+                it.addSearchScreen(navController)
+            }
         }
     }
 }
