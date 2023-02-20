@@ -1,7 +1,7 @@
 package com.alextfos.punkoo.styles.ui.theme.objectstyle
 
-import com.alextfos.punkoo.styles.ui.theme.objectstyle.borderradius.BorderRadius
-import com.alextfos.punkoo.styles.ui.theme.objectstyle.borderradius.BorderRadiusLight
+import androidx.compose.ui.unit.Dp
+import com.alextfos.punkoo.styles.ui.theme.objectstyle.light.BorderRadiusLight
 
 data class CompoundObjectStyle(
     val borderRadius: BorderRadius = BorderRadiusLight()

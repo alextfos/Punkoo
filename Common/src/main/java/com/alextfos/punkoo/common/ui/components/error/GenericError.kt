@@ -24,7 +24,6 @@ import timber.log.Timber
 fun ErrorView(
     error: Error = Error.Unknown("Unknown"),
     onRetry: (() -> Unit)? = null
-
 ) {
     when (error) {
         is Error.EmptyView,
@@ -102,28 +101,28 @@ private fun GenericErrorView(
             verticalArrangement = Arrangement.Center
         ) {
             Image(
-                colorFilter = ColorFilter.tint(Theme.colors.default.iconStrong),
+                colorFilter = ColorFilter.tint(Theme.colors.icon),
                 painter = painter,
                 contentDescription = stringResource(R.string.error_image_description)
             )
             Text(
                 title,
-                style = Theme.typography.title50,
-                color = Theme.colors.default.textStrong,
+                style = Theme.typography.title,
+                color = Theme.colors.text,
                 modifier = Modifier.padding(top = 11.dp, bottom = 4.dp)
             )
             Text(
                 text,
-                style = Theme.typography.body20,
-                color = Theme.colors.default.textStrong,
+                style = Theme.typography.text,
+                color = Theme.colors.text,
                 textAlign = TextAlign.Center
             )
         }
         onRetry?.let {
             Button(
-                shape = RoundedCornerShape(Theme.objectStyle.borderRadius.m),
+                shape = RoundedCornerShape(Theme.objectStyle.borderRadius.buttonBorderRadius),
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Theme.colors.default.bg
+                    backgroundColor = Theme.colors.background
                 ),
                 onClick = it,
                 modifier = Modifier.padding(top = 24.dp),
@@ -131,8 +130,8 @@ private fun GenericErrorView(
             ) {
                 Text(
                     stringResource(R.string.error_retry),
-                    style = Theme.typography.button10,
-                    color = Theme.colors.default.textStrong,
+                    style = Theme.typography.textButton,
+                    color = Theme.colors.text,
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
                 )
             }

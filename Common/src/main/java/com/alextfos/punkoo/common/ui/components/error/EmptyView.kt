@@ -24,8 +24,8 @@ fun EmptyView(text: String? = null) {
     ) {
         Text(
             text = text ?: stringResource(R.string.no_results_available),
-            color = Theme.colors.default.textStrong,
-            style = Theme.typography.title50,
+            color = Theme.colors.text,
+            style = Theme.typography.title,
             textAlign = TextAlign.Center,
         )
     }
