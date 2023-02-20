@@ -20,7 +20,7 @@ fun SearchPagedList(pagedSearch: Flow<PagingData<BeerBo>>) {
     } else {
         LazyColumn {
             items(searchList.itemCount) { index ->
-                SearchItem(
+                ShowBeer(
                     beer = searchList[index]!!
                 )
             }
