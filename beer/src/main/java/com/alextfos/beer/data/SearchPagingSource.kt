@@ -9,14 +9,14 @@ import com.alextfos.beer.data.dto.BeerDto
 
 class SearchPagingSource(
     private val pageSize: Int,
-    private val searchTokenList: List<String>,
+    private val searchTokenList: List<String>?,
     private val beerApi: BeerApi
 ) : PunkooPagingSource<BeerDto>() {
 
     override suspend fun loadData(currentPageNumber: Int): List<BeerDto> {
 
         return beerApi.searchBeers(
-            beerTokens = searchTokenList.normalizeWithUnderScores(),
+            beerTokens = searchTokenList?.normalizeWithUnderScores(),
             pageSize = pageSize,
             page = currentPageNumber
         ).safeBody()

@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface BeerApi {
     @GET("$versionApi/beers")
     suspend fun searchBeers(
-        @Query("beer_name") beerTokens: String,
+        @Query("beer_name") beerTokens: String? = null,
         @Query("page") page: Int,
         @Query("per_page") pageSize: Int
     ): Response<List<BeerDto>>
