@@ -6,18 +6,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 class CustomTypography internal constructor(
-    val title50: TextStyle,
-    val body20: TextStyle,
-    val button10: TextStyle
+    val title: TextStyle,
+    val text: TextStyle,
+    val textButton: TextStyle
 ) {
 
     constructor(
         defaultFormFamily: FontFamily = FontFamily.Default,
-        title40: TextStyle = TextStyle(
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
-            lineHeight = 30.sp
-        ),
         title50: TextStyle = TextStyle(
             fontWeight = FontWeight.Bold,
             fontSize = 16.sp,
@@ -34,9 +29,9 @@ class CustomTypography internal constructor(
             lineHeight = 14.sp
         ),
     ) : this(
-        title50 = title50.withDefaultFontFamily(defaultFormFamily),
-        body20 = body20.withDefaultFontFamily(defaultFormFamily),
-        button10 = button10.withDefaultFontFamily(defaultFormFamily)
+        title = title50.withDefaultFontFamily(defaultFormFamily),
+        text = body20.withDefaultFontFamily(defaultFormFamily),
+        textButton = button10.withDefaultFontFamily(defaultFormFamily)
     )
 }
 

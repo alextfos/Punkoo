@@ -25,7 +25,7 @@ class BeerRepository(
         return res
     }
     fun searchBeer(
-        beerTokens: List<String>
+        beerTokens: List<String>?
     ): Flow<PagingData<BeerDto>> {
         return Pager(
             PagingConfig(pageSize = pageSize, prefetchDistance = (pageSize * prefetchPercent).toInt())

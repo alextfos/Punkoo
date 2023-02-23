@@ -4,36 +4,39 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.staticCompositionLocalOf
-import com.alextfos.punkoo.styles.ui.theme.colors.global.palettes.DarkPalette
-import com.alextfos.punkoo.styles.ui.theme.colors.global.palettes.LightPalette
-import com.alextfos.punkoo.styles.ui.theme.colors.global.palettes.Palette
-import com.alextfos.punkoo.styles.ui.theme.colors.specific.Specific
-import com.alextfos.punkoo.styles.ui.theme.colors.specific.dark.SpecificDark
-import com.alextfos.punkoo.styles.ui.theme.colors.specific.light.SpecificLight
+import com.alextfos.punkoo.styles.ui.theme.colors.Colors
+import com.alextfos.punkoo.styles.ui.theme.colors.Semantic
+import com.alextfos.punkoo.styles.ui.theme.colors.dark.ColorsDark
+import com.alextfos.punkoo.styles.ui.theme.colors.light.ColorsLight
 import com.alextfos.punkoo.styles.ui.theme.objectstyle.CompoundObjectStyle
+import com.alextfos.punkoo.styles.ui.theme.objectstyle.dark.BorderRadiusDark
+import com.alextfos.punkoo.styles.ui.theme.objectstyle.light.BorderRadiusLight
 import com.alextfos.punkoo.styles.ui.theme.typography.CustomTypography
 
 @Composable
 fun PunkooTheme(type: ThemeType, content: @Composable () -> Unit) {
-    val palette: Palette = when (type) {
-        ThemeType.LIGHT -> LightPalette()
-        ThemeType.DARK -> DarkPalette()
-    }
+    val semantic = Semantic()
     val specific = when (type) {
-        ThemeType.LIGHT -> SpecificLight(palette)
-        ThemeType.DARK -> SpecificDark(palette)
+        ThemeType.LIGHT -> ColorsLight(semantic)
+        ThemeType.DARK -> ColorsDark(semantic)
     }
+    val borderRadius = when (type) {
+        ThemeType.LIGHT -> BorderRadiusLight()
+        ThemeType.DARK -> BorderRadiusDark()
+    }
+    val compoundObjectStyle = CompoundObjectStyle(borderRadius = borderRadius)
 
     CompositionLocalProvider(
         LocalPunkooColors provides specific,
-        LocalPunkooTheme provides type
+        LocalPunkooTheme provides type,
+        LocalPunkooObjectStyle provides compoundObjectStyle
     ) {
         content()
     }
 }
 
-internal val LocalPunkooColors: ProvidableCompositionLocal<Specific> = staticCompositionLocalOf {
-    SpecificDark(DarkPalette())
+internal val LocalPunkooColors: ProvidableCompositionLocal<Colors> = staticCompositionLocalOf {
+    ColorsDark(Semantic())
 }
 
 internal val LocalPunkooTypography = staticCompositionLocalOf {

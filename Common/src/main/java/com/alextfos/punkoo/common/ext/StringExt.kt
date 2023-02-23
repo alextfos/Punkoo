@@ -8,3 +8,5 @@ fun List<String>.normalizeWithUnderScores(): String {
     res.delete(res.length - 1, res.length)
     return res.toString()
 }
+
+fun String.tokenize(): List<String> = split(" ")

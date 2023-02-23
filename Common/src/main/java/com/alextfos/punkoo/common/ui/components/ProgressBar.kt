@@ -20,15 +20,15 @@ import com.alextfos.punkoo.common.R
 @Composable
 fun ProgressBarFullScreen() {
     ProgressBarModule(
-        backgroundColor = Theme.colors.default.bg,
-        fillColor = Theme.colors.default.iconStrong
+        backgroundColor = Theme.colors.background,
+        fillColor = Theme.colors.icon
     )
 }
 
 @Composable
 fun ProgressBarModule(
     backgroundColor: Color = Color.Transparent,
-    fillColor: Color = Theme.colors.default.iconStrong
+    fillColor: Color = Theme.colors.icon
 ) {
     Box(
         contentAlignment = Alignment.Center,

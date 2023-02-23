@@ -12,7 +12,7 @@ class SearchUseCase(
     private val beerRepository: BeerRepository
 ) {
     fun invoke(
-        searchTokenList: List<String>
+        searchTokenList: List<String>?
     ): Flow<PagingData<BeerBo>> {
         return beerRepository.searchBeer(searchTokenList).map {
             it.map { beerDto ->
