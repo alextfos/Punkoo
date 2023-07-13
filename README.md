@@ -1,8 +1,10 @@
-# Información
-- Los flavors y los entornos se crean añadiendo ficheros properties en la carpeta <#project#>/properties
-- Cada grupo de features se crea en un módulo separado con todas las capas definidas en Clean Architecture
+# Information
+- API: https://api.punkapi.com/v2
+- Flavors and environments can be created adding properties file to <#project#>/properties
+- Each features group is created in a separate and decoupled module with all Clean Architecture layers
 
 # TODO
+
 
 ## Pomodoro 1
 - EditText con el trigger para filtrar en cada cambio
@@ -15,3 +17,15 @@
 - Acabar pantalla de Random
 - Estilos
 - Tests de los mappers y de los ViewModels
+
+
+### Version catalog
+
+### Actualizar Plugin y JVM
+
+## Solucionar warning
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+
+### Hacer un factory para el PreviewData
+
+### Refactorizar los inject

@@ -9,4 +9,4 @@ fun List<String>.normalizeWithUnderScores(): String {
     return res.toString()
 }
 
-fun String.tokenize(): List<String> = split(" ")
+fun String.splitBySpace(): List<String> = split(" ")

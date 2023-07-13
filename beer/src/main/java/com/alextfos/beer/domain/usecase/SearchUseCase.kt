@@ -14,7 +14,7 @@ class SearchUseCase(
     fun invoke(
         searchTokenList: List<String>?
     ): Flow<PagingData<BeerBo>> {
-        return beerRepository.searchBeer(searchTokenList).map {
+        return beerRepository.getBeerList(searchTokenList).map {
             it.map { beerDto ->
                 beerDto.toBeerBo()
             }
