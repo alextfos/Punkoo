@@ -1,4 +1,4 @@
-package com.alextfos.beer.ui.search
+package com.alextfos.beer.ui.common
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text

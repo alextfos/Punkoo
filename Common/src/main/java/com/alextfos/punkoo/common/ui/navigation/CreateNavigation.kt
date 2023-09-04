@@ -12,7 +12,7 @@ fun CreateNavigation(
 ) {
     NavHost(
         navController = navController,
-        startDestination =  Screen.Search.route,
+        startDestination =  Screen.BeerList.route,
         builder = {
             initNavigation(this)
         }

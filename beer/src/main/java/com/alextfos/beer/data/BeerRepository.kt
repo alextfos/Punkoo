@@ -12,8 +12,8 @@ import kotlinx.coroutines.flow.Flow
 class BeerRepository(
     private val beerApi: BeerApi,
 ) {
-    val pageSize = 10
-    val prefetchPercent = 1.5
+    private val pageSize = 25
+    private val prefetchPercent = 1.5
 
     suspend fun getRandomBeer(): List<BeerDto> {
         val res = beerApi.getRandomBeer().safeBody()
@@ -24,15 +24,16 @@ class BeerRepository(
 
         return res
     }
-    fun searchBeer(
-        beerTokens: List<String>?
+
+    fun getBeerList(
+        beerTokens: List<String>? = null
     ): Flow<PagingData<BeerDto>> {
         return Pager(
             PagingConfig(pageSize = pageSize, prefetchDistance = (pageSize * prefetchPercent).toInt())
         ) {
             SearchPagingSource(
                 pageSize = pageSize,
-                searchTokenList = beerTokens,
+                keywordList = beerTokens,
                 beerApi = beerApi
             )
         }.flow

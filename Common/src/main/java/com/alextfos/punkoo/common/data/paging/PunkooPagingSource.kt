@@ -2,6 +2,7 @@ package com.alextfos.punkoo.common.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import timber.log.Timber
 
 abstract class PunkooPagingSource<T : Any>(
 ) : PagingSource<Int, T>() {
@@ -25,6 +26,7 @@ abstract class PunkooPagingSource<T : Any>(
                 nextKey = nextPageNumber
             )
         } catch (t: Throwable) {
+            Timber.d(t)
             return LoadResult.Error(t)
         }
     }

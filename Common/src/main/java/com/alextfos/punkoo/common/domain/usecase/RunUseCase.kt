@@ -7,9 +7,9 @@ import com.alextfos.punkoo.common.domain.entity.Error
 import com.alextfos.punkoo.common.ext.toError
 import timber.log.Timber
 
-typealias Result<T> = Either<Error, T>
+typealias UseCaseResult<T> = Either<Error, T>
 
-inline fun <T> runUseCase(body: () -> T): Result<T> = try {
+inline fun <T> runUseCase(body: () -> T): UseCaseResult<T> = try {
     body().right()
 } catch (t: Throwable) {
     Timber.e(t)
