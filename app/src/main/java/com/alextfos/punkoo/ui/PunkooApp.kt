@@ -1,5 +1,6 @@
 package com.alextfos.punkoo.ui
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
@@ -18,7 +19,12 @@ fun PunkooApp(
 ) {
     val scaffoldState: ScaffoldState = rememberScaffoldState()
 
-    PunkooTheme(ThemeType.LIGHT) {
+    val selectedTheme = if (isSystemInDarkTheme()) {
+            ThemeType.LIGHT
+        } else {
+            ThemeType.DARK
+        }
+    PunkooTheme(selectedTheme) {
         InitAppScaffold(scaffoldState) {
             CreateNavigation(
                 navController,

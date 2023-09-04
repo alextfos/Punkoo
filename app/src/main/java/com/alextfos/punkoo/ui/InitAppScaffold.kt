@@ -16,7 +16,7 @@ fun InitAppScaffold(
 ) {
     Scaffold(
         scaffoldState = scaffoldState,
-        backgroundColor = Theme.colors.default.bg,
+        backgroundColor = Theme.colors.background,
         floatingActionButtonPosition = FabPosition.Center
     ) {
         Box(
