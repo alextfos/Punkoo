@@ -6,7 +6,7 @@ import com.alextfos.punkoo.styles.ui.theme.colors.Colors
 
 class ColorsLight(
     semantic: Semantic
-) : Colors(semantic) {
+) : Colors() {
 
     override val background: Color = semantic.white
     override val text: Color = semantic.black

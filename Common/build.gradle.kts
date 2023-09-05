@@ -2,8 +2,6 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -39,7 +37,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -64,7 +62,6 @@ dependencies {
     implementation(Compose.hiltNavigation)
 
     api(Log.timber)
-    kapt(Hilt.compiler)
 
     // API
     implementation(Api.arrowCore)
