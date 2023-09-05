@@ -92,7 +92,8 @@ dependencies {
 
     implementation(Material.material)
 
-    implementation(Compose.activity)
+    implementation(libs.activity)
+    //implementation(Compose.activity)
     implementation(Compose.ui)
     implementation(Compose.material)
     implementation(Compose.coilCompose)
