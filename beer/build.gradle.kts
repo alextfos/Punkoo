@@ -8,7 +8,7 @@ plugins {
 
 android {
     compileSdk = Android.compileSdk
-
+    namespace = "com.alextfos.beer"
     defaultConfig {
         minSdk = Android.minSdk
         targetSdk = Android.targetSdk

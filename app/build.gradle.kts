@@ -9,8 +9,10 @@ plugins {
 
 android {
     compileSdk = Android.compileSdk
+    namespace = "com.alextfos.punkoo"
 
     defaultConfig {
+        applicationId = "com.alextfos.punkoo"
         minSdk = Android.minSdk
         targetSdk = Android.targetSdk
         versionCode = Android.versionCode

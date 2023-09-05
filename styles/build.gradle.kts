@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdk = Android.compileSdk
-
+    namespace = "com.alextfos.punkoo.styles"
     defaultConfig {
         minSdk = Android.minSdk
         targetSdk = Android.targetSdk

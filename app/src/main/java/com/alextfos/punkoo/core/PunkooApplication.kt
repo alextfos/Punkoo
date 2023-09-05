@@ -25,7 +25,7 @@ class PunkooApplication : Application() {
         override fun log(
             priority: Int,
             tag: String?,
-            @NonNull message: String,
+            message: String,
             t: Throwable?
         ) {
             if (priority == Log.VERBOSE || priority == Log.DEBUG) {

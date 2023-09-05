@@ -2,7 +2,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        mavenCentral()
+        maven(url = "https://repo.maven.apache.org/maven2")
     }
 }
 dependencyResolutionManagement {
@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Punkoo"
-include ':app'
-include ':common'
-include ':styles'
-include ':beer'
+include(":app")
+include(":common")
+include(":styles")
+include(":beer")

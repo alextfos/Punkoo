@@ -8,6 +8,7 @@ plugins {
 
 android {
     compileSdk = Android.compileSdk
+    namespace = "com.alextfos.punkoo.common"
 
     defaultConfig {
         minSdk = Android.minSdk
