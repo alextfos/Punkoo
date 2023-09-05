@@ -1,7 +1,10 @@
 [versions]
 activity = "1.6.1"
 material = "1.8.0"
+lifecycle = "2.5.1"
 
 [libraries]
 activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+lifecycleViewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycleRuntime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }

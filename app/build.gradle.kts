@@ -102,7 +102,6 @@ dependencies {
     implementation(Compose.hiltNavigation)
     implementation(Compose.runtimeLivedata)
     implementation(Compose.coilSvgCompose)
-    implementation(AndroidX.lifecycleCompose)
     implementation(Compose.pagingCompose)
 
     implementation(Api.retrofit)
@@ -112,8 +111,8 @@ dependencies {
     implementation(Api.moshi)
     implementation(Api.moshiAdapters)
 
-    implementation(AndroidX.lifecycleViewModel)
-    implementation(AndroidX.lifecycleRuntime)
+    implementation(androidLibs.lifecycleViewModel)
+    implementation(androidLibs.lifecycleRuntime)
 
     implementation(Hilt.android)
     kapt(Api.moshiKapt)

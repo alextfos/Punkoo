@@ -58,8 +58,8 @@ dependencies {
     implementation(Coroutines.core)
     implementation(Coroutines.android)
     implementation(Api.arrowCore)
-    implementation(AndroidX.lifecycleViewModel)
-    implementation(AndroidX.lifecycleRuntime)
+    implementation(androidLibs.lifecycleViewModel)
+    implementation(androidLibs.lifecycleRuntime)
     implementation(Hilt.android)
     implementation(Compose.coilSvgCompose)
 
