@@ -87,35 +87,44 @@ android {
 }
 
 dependencies {
+    // App dependencies
     implementation(project(Modules.styles))
     api(project(Modules.common))
     implementation(project(Modules.beer))
 
+    // Android dependencies
     implementation(androidLibs.activity)
     implementation(androidLibs.composeUi)
     implementation(androidLibs.materialCompose)
     implementation(androidLibs.material)
-    implementation(thirdPartyLibs.coil)
     implementation(androidLibs.navigation)
     implementation(androidLibs.runtimeLiveData)
     implementation(androidLibs.paging)
-
-    // Networking
-    implementation(networkingLibs.retrofit)
-    implementation(networkingLibs.retrofitConverter)
-    implementation(networkingLibs.loggingInterceptor)
-    implementation(thirdPartyLibs.arrowCore)
-    implementation(networkingLibs.moshi)
-    implementation(networkingLibs.moshiAdapters)
-
     implementation(androidLibs.lifecycleViewModel)
     implementation(androidLibs.lifecycleRuntime)
-
     implementation(androidLibs.hiltAndroid)
     kapt(androidLibs.hiltCompiler)
 
-    kapt(networkingLibs.moshiKapt)
+    // Tooling Preview
+    implementation(androidLibs.tooling)
+    debugImplementation(androidLibs.toolingPreview)
+    debugImplementation(androidLibs.poolingContainer)
 
+    // Networking dependencies
+    implementation(networkingLibs.retrofit)
+    implementation(networkingLibs.retrofitConverter)
+    implementation(networkingLibs.loggingInterceptor)
+    implementation(networkingLibs.moshi)
+    implementation(networkingLibs.moshiAdapters)
+    kapt(networkingLibs.moshiKapt)
+    debugImplementation(networkingLibs.chucker)
+    releaseImplementation(networkingLibs.chuckerNoOp)
+
+    // Third Party dependencies
+    implementation(thirdPartyLibs.coil)
+    implementation(thirdPartyLibs.arrowCore)
+
+    // Test dependencies
     testImplementation(testLibs.junit)
     testImplementation(testLibs.mockk)
     testImplementation(testLibs.archCoreTesting)
@@ -125,10 +134,4 @@ dependencies {
     androidTestImplementation(androidLibs.uiTestJunit4)
     androidTestImplementation(testLibs.espresso)
 
-    implementation(androidLibs.tooling)
-    debugImplementation(androidLibs.toolingPreview)
-    debugImplementation(androidLibs.poolingContainer)
-
-    debugImplementation(networkingLibs.chucker)
-    releaseImplementation(networkingLibs.chuckerNoOp)
 }

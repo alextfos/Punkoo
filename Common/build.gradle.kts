@@ -45,9 +45,10 @@ android {
 }
 
 dependencies {
-    // Project
+    // App dependencies
     api(project(Modules.styles))
 
+    // Android dependencies
     implementation(androidLibs.navigation)
     implementation(androidLibs.composeUi)
     implementation(androidLibs.materialCompose)
@@ -56,23 +57,22 @@ dependencies {
     implementation(androidLibs.runtimeLiveData)
     implementation(androidLibs.hiltAndroid)
 
-    api(thirdPartyLibs.timber)
-
-    // API
-    implementation(thirdPartyLibs.arrowCore)
-    api(networkingLibs.retrofit)
-    implementation(networkingLibs.okHttp)
-    api(networkingLibs.moshi)
-
-    // Compose Preview
+    // Tooling Preview
     implementation(androidLibs.tooling)
     debugImplementation(androidLibs.toolingPreview)
     debugImplementation(androidLibs.poolingContainer)
 
-    // Third Party
-    implementation(thirdPartyLibs.coil)
+    // Networking dependencies
+    implementation(networkingLibs.okHttp)
+    api(networkingLibs.retrofit)
+    api(networkingLibs.moshi)
 
-    // Test
+    // Third Party dependencies
+    api(thirdPartyLibs.timber)
+    implementation(thirdPartyLibs.coil)
+    implementation(thirdPartyLibs.arrowCore)
+
+    // Test dependencies
     testImplementation(testLibs.coroutinesTest)
     testImplementation(testLibs.mockk)
     testImplementation(testLibs.archCoreTesting)
