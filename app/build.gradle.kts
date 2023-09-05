@@ -82,7 +82,7 @@ android {
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = Build.composeCompilerVersion
     }
 }
 
@@ -97,7 +97,7 @@ dependencies {
     implementation(thirdPartyLibs.coil)
     implementation(androidLibs.navigation)
     implementation(androidLibs.runtimeLiveData)
-    implementation(Compose.pagingCompose)
+    implementation(androidLibs.paging)
 
     // Networking
     implementation(networkingLibs.retrofit)
@@ -110,9 +110,10 @@ dependencies {
     implementation(androidLibs.lifecycleViewModel)
     implementation(androidLibs.lifecycleRuntime)
 
-    implementation(Hilt.android)
+    implementation(androidLibs.hiltAndroid)
+    kapt(androidLibs.hiltCompiler)
+
     kapt(networkingLibs.moshiKapt)
-    kapt(Hilt.compiler)
 
     testImplementation(Test.junit)
     testImplementation(Test.mockk)
@@ -120,7 +121,7 @@ dependencies {
     testImplementation(Test.coroutinesTest)
     testImplementation(Test.testCore)
     androidTestImplementation(Test.junitTest)
-    androidTestImplementation(ComposeTest.uiTestJunit4)
+    androidTestImplementation(androidLibs.uiTestJunit4)
     androidTestImplementation(Test.espressoCore)
 
     implementation(androidLibs.tooling)

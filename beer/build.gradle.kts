@@ -35,7 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = Build.composeCompilerVersion
     }
 }
 
@@ -51,11 +51,12 @@ dependencies {
     implementation(androidLibs.runtimeLiveData)
     implementation(androidLibs.hiltNavigation)
     implementation(thirdPartyLibs.coil)
-    implementation(Compose.pagingCompose)
+    implementation(androidLibs.paging)
     implementation(thirdPartyLibs.arrowCore)
     implementation(androidLibs.lifecycleViewModel)
     implementation(androidLibs.lifecycleRuntime)
-    implementation(Hilt.android)
+    implementation(androidLibs.hiltAndroid)
+    kapt(androidLibs.hiltCompiler)
 
     // Compose Preview
     implementation(androidLibs.tooling)
@@ -69,7 +70,6 @@ dependencies {
     testImplementation(Test.mockk)
 
     androidTestImplementation(Test.junitTest)
-    androidTestImplementation(ComposeTest.uiTestJunit4)
+    androidTestImplementation(androidLibs.uiTestJunit4)
 
-    kapt(Hilt.compiler)
 }

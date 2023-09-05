@@ -7,7 +7,7 @@ buildscript {
         classpath(Build.androidBuildTools)
         classpath(Build.kotlinGradlePlugin)
         classpath(Build.hiltAndroid)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Build.kotlinVersion}")
     }
 }
 

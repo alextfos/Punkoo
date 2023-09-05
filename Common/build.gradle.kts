@@ -35,7 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = Build.composeCompilerVersion
     }
     packaging {
         resources {
@@ -51,10 +51,10 @@ dependencies {
     implementation(androidLibs.navigation)
     implementation(androidLibs.composeUi)
     implementation(androidLibs.material)
-    implementation(Compose.pagingCompose)
+    implementation(androidLibs.paging)
     implementation(androidLibs.activity)
     implementation(androidLibs.runtimeLiveData)
-    implementation(Hilt.android)
+    implementation(androidLibs.hiltAndroid)
 
     api(thirdPartyLibs.timber)
 
