@@ -19,6 +19,9 @@ dependencyResolutionManagement {
         create("testLibs") {
             from(files("./gradle/testLibs.versions.toml"))
         }
+        create("buildLibs") {
+            from(files("./gradle/buildLibs.versions.toml"))
+        }
     }
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {

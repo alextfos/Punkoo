@@ -82,7 +82,7 @@ android {
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Build.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
     }
 }
 

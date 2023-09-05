@@ -1,0 +1,8 @@
+[versions]
+buildTools = "8.1.1"
+kotlin = "1.7.20"
+
+[libraries]
+buildTools = { module = "com.android.tools.build:gradle", version.ref = "buildTools" }
+kotlinPlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
