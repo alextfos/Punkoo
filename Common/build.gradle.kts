@@ -51,7 +51,6 @@ dependencies {
     implementation(androidLibs.navigation)
     implementation(androidLibs.composeUi)
     implementation(androidLibs.material)
-    implementation(Compose.tooling)
     implementation(Compose.pagingCompose)
     implementation(androidLibs.activity)
     implementation(androidLibs.runtimeLiveData)
@@ -65,9 +64,12 @@ dependencies {
     implementation(Api.okHttp)
     api(Api.moshi)
 
-    // Compose
-    debugImplementation(Compose.toolingPreview)
-    debugImplementation(Compose.poolingContainer)
+    // Compose Preview
+    implementation(androidLibs.tooling)
+    debugImplementation(androidLibs.toolingPreview)
+    debugImplementation(androidLibs.poolingContainer)
+
+    // Third Party
     implementation(thirdPartyLibs.coil)
 
     // Test

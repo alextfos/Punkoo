@@ -95,7 +95,6 @@ dependencies {
     implementation(androidLibs.composeUi)
     implementation(androidLibs.material)
     implementation(thirdPartyLibs.coil)
-    implementation(Compose.tooling)
     implementation(androidLibs.navigation)
     implementation(androidLibs.runtimeLiveData)
     implementation(Compose.pagingCompose)
@@ -123,8 +122,10 @@ dependencies {
     androidTestImplementation(ComposeTest.uiTestJunit4)
     androidTestImplementation(Test.espressoCore)
 
-    debugImplementation(Compose.toolingPreview)
-    debugImplementation(Compose.poolingContainer)
+    implementation(androidLibs.tooling)
+    debugImplementation(androidLibs.toolingPreview)
+    debugImplementation(androidLibs.poolingContainer)
+
     debugImplementation(Api.chucker)
     releaseImplementation(Api.chuckerNoOp)
 }

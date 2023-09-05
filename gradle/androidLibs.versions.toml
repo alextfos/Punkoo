@@ -18,8 +18,8 @@ material = { module = "androidx.compose.material:material", version.ref = "compo
 runtimeLiveData = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose" }
 tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 toolingPreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
-uiTestJunit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
 poolingContainer = { module = "androidx.customview:customview-poolingcontainer", version.ref = "poolingContainer" }
+uiTestJunit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
 hiltNavigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
 paging = { module = "androidx.paging:paging-compose", version.ref = "paging" }
 hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }

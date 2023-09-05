@@ -47,7 +47,6 @@ dependencies {
     implementation(androidLibs.activity)
     implementation(androidLibs.composeUi)
     implementation(androidLibs.material)
-    implementation(Compose.tooling)
     implementation(androidLibs.navigation)
     implementation(androidLibs.runtimeLiveData)
     implementation(androidLibs.hiltNavigation)
@@ -60,8 +59,10 @@ dependencies {
     implementation(androidLibs.lifecycleRuntime)
     implementation(Hilt.android)
 
-    debugImplementation(Compose.toolingPreview)
-    debugImplementation(Compose.poolingContainer)
+    // Compose Preview
+    implementation(androidLibs.tooling)
+    debugImplementation(androidLibs.toolingPreview)
+    debugImplementation(androidLibs.poolingContainer)
 
     testImplementation(Test.coroutinesTest)
     testImplementation(Test.testCore)
