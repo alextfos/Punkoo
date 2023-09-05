@@ -54,9 +54,8 @@ dependencies {
     implementation(Compose.tooling)
     implementation(Compose.pagingCompose)
     implementation(androidLibs.activity)
-    implementation(Compose.runtimeLivedata)
+    implementation(androidLibs.runtimeLiveData)
     implementation(Hilt.android)
-    implementation(Compose.hiltNavigation)
 
     api(Log.timber)
 

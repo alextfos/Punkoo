@@ -97,8 +97,7 @@ dependencies {
     implementation(thirdPartyLibs.coil)
     implementation(Compose.tooling)
     implementation(androidLibs.navigation)
-    implementation(Compose.hiltNavigation)
-    implementation(Compose.runtimeLivedata)
+    implementation(androidLibs.runtimeLiveData)
     implementation(Compose.pagingCompose)
 
     implementation(Api.retrofit)
