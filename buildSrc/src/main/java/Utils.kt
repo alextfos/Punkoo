@@ -9,7 +9,7 @@ fun buildProperties(
 
     while (enums.hasMoreElements()) {
         val key = enums.nextElement() as? String
-        var value = properties.getProperty(key)
+        val value = properties.getProperty(key)
 
         if (key?.startsWith("config_") == true) {
             onProperty.invoke(key, value)

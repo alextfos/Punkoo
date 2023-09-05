@@ -49,7 +49,6 @@ dependencies {
     api(project(Modules.styles))
 
     //implementation(AndroidX.core)
-    implementation(AndroidX.appcompat)
     implementation(androidLibs.material)
     implementation(Compose.navigation)
     implementation(Compose.ui)
