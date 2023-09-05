@@ -51,7 +51,7 @@ dependencies {
     implementation(androidLibs.navigation)
     implementation(Compose.hiltNavigation)
     implementation(Compose.runtimeLivedata)
-    implementation(Compose.coilCompose)
+    implementation(thirdPartyLibs.coil)
     implementation(Compose.pagingCompose)
     implementation(Coroutines.core)
     implementation(Coroutines.android)
@@ -59,7 +59,6 @@ dependencies {
     implementation(androidLibs.lifecycleViewModel)
     implementation(androidLibs.lifecycleRuntime)
     implementation(Hilt.android)
-    implementation(Compose.coilSvgCompose)
 
     debugImplementation(Compose.toolingPreview)
     debugImplementation(Compose.poolingContainer)

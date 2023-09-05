@@ -69,7 +69,7 @@ dependencies {
     // Compose
     debugImplementation(Compose.toolingPreview)
     debugImplementation(Compose.poolingContainer)
-    implementation(Compose.coilCompose)
+    implementation(thirdPartyLibs.coil)
 
     // Test
     testImplementation(Test.coroutinesTest)

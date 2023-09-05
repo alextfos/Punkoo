@@ -94,12 +94,11 @@ dependencies {
     implementation(androidLibs.activity)
     implementation(androidLibs.composeUi)
     implementation(androidLibs.material)
-    implementation(Compose.coilCompose)
+    implementation(thirdPartyLibs.coil)
     implementation(Compose.tooling)
     implementation(androidLibs.navigation)
     implementation(Compose.hiltNavigation)
     implementation(Compose.runtimeLivedata)
-    implementation(Compose.coilSvgCompose)
     implementation(Compose.pagingCompose)
 
     implementation(Api.retrofit)

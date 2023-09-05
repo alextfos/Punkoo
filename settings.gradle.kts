@@ -10,6 +10,9 @@ dependencyResolutionManagement {
         create("androidLibs") {
             from(files("./gradle/androidLibs.versions.toml"))
         }
+        create("thirdPartyLibs") {
+            from(files("./gradle/thirdPartyLibs.versions.toml"))
+        }
     }
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {

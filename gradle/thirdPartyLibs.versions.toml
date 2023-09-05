@@ -1,0 +1,5 @@
+[versions]
+coil = "2.2.2"
+
+[libraries]
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
