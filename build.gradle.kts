@@ -6,7 +6,7 @@ buildscript {
     dependencies {
         classpath(Build.androidBuildTools)
         classpath(Build.kotlinGradlePlugin)
-        classpath(Build.hiltAndroid)
+        classpath(androidLibs.hiltPlugin)
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Build.kotlinVersion}")
     }
 }
