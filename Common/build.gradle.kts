@@ -57,7 +57,7 @@ dependencies {
     implementation(androidLibs.runtimeLiveData)
     implementation(Hilt.android)
 
-    api(Log.timber)
+    api(thirdPartyLibs.timber)
 
     // API
     implementation(Api.arrowCore)

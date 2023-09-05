@@ -50,6 +50,7 @@ dependencies {
     implementation(Compose.tooling)
     implementation(androidLibs.navigation)
     implementation(androidLibs.runtimeLiveData)
+    implementation(androidLibs.hiltNavigation)
     implementation(thirdPartyLibs.coil)
     implementation(Compose.pagingCompose)
     implementation(Coroutines.core)
