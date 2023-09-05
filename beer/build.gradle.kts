@@ -46,11 +46,11 @@ dependencies {
 
     implementation(androidLibs.material)
 
-    implementation(Compose.activity)
-    implementation(Compose.ui)
+    implementation(androidLibs.activity)
+    implementation(androidLibs.composeUi)
     implementation(Compose.material)
     implementation(Compose.tooling)
-    implementation(Compose.navigation)
+    implementation(androidLibs.navigation)
     implementation(Compose.hiltNavigation)
     implementation(Compose.runtimeLivedata)
     implementation(Compose.coilCompose)

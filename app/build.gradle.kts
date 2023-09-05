@@ -94,11 +94,11 @@ dependencies {
     implementation(androidLibs.material)
 
     implementation(androidLibs.activity)
-    implementation(Compose.ui)
+    implementation(androidLibs.composeUi)
     implementation(Compose.material)
     implementation(Compose.coilCompose)
     implementation(Compose.tooling)
-    implementation(Compose.navigation)
+    implementation(androidLibs.navigation)
     implementation(Compose.hiltNavigation)
     implementation(Compose.runtimeLivedata)
     implementation(Compose.coilSvgCompose)
