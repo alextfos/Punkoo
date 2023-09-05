@@ -1,11 +1,11 @@
 [versions]
 espresso = "3.5.1"
 junit = "4.13.2"
-junitTest = "1.1.3"
-mockk = "1.13.2"
-coroutines = "1.6.4"
+junitTest = "1.1.5"
+mockk = "1.13.5"
+coroutines = "1.7.3"
 testCore = "1.5.0"
-archCoreTesting = "2.1.0"
+archCoreTesting = "2.2.0"
 
 [libraries]
 espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
