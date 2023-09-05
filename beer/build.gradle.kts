@@ -7,10 +7,10 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
+    compileSdk = PunkooProject.compileSdk
     namespace = "com.alextfos.beer"
     defaultConfig {
-        minSdk = Android.minSdk
+        minSdk = PunkooProject.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,7 +44,7 @@ dependencies {
     api(project(Modules.common))
     implementation(project(Modules.styles))
 
-    implementation(Material.material)
+    implementation(androidLibs.material)
 
     implementation(Compose.activity)
     implementation(Compose.ui)

@@ -1,8 +1,9 @@
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter.ofPattern
 
-object Android {
+object PunkooProject {
 
+    const val applicationId = "com.alextfos.punkoo"
     const val compileSdk = 33
     const val minSdk = 23
     const val targetSdk = 33

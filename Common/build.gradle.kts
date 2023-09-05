@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
+    compileSdk = PunkooProject.compileSdk
     namespace = "com.alextfos.punkoo.common"
 
     defaultConfig {
-        minSdk = Android.minSdk
+        minSdk = PunkooProject.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -48,9 +48,9 @@ dependencies {
     // Project
     api(project(Modules.styles))
 
-    implementation(AndroidX.core)
+    //implementation(AndroidX.core)
     implementation(AndroidX.appcompat)
-    implementation(Material.material)
+    implementation(androidLibs.material)
     implementation(Compose.navigation)
     implementation(Compose.ui)
     implementation(Compose.material)

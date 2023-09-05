@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
+    compileSdk = PunkooProject.compileSdk
     namespace = "com.alextfos.punkoo.styles"
     defaultConfig {
-        minSdk = Android.minSdk
+        minSdk = PunkooProject.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

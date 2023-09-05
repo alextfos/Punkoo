@@ -1,0 +1,7 @@
+[versions]
+activity = "1.6.1"
+material = "1.8.0"
+
+[libraries]
+activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+material = { module = "com.google.android.material:material", version.ref = "material" }

@@ -15,10 +15,3 @@ buildscript {
 tasks.register("clean", Delete::class) {
     delete(rootProject.layout.buildDirectory)
 }
-
-fun getSecretValueFromKey(key: String): String? {
-    val keyFile = file("local.properties")
-    val secretKeys = java.util.Properties()
-    secretKeys.load(java.io.FileInputStream(keyFile))
-    return secretKeys.getProperty(key)
-}

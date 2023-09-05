@@ -8,14 +8,15 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
-    namespace = "com.alextfos.punkoo"
+    compileSdk = PunkooProject.compileSdk
+    namespace = PunkooProject.applicationId
 
     defaultConfig {
-        applicationId = "com.alextfos.punkoo"
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
-        versionCode = Android.versionCode
+        applicationId = PunkooProject.applicationId
+        minSdk = PunkooProject.minSdk
+        targetSdk = PunkooProject.targetSdk
+        versionCode = PunkooProject.versionCode
+        versionName = PunkooProject.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -90,10 +91,9 @@ dependencies {
     api(project(Modules.common))
     implementation(project(Modules.beer))
 
-    implementation(Material.material)
+    implementation(androidLibs.material)
 
-    implementation(libs.activity)
-    //implementation(Compose.activity)
+    implementation(androidLibs.activity)
     implementation(Compose.ui)
     implementation(Compose.material)
     implementation(Compose.coilCompose)
