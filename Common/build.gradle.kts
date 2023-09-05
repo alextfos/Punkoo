@@ -73,10 +73,10 @@ dependencies {
     implementation(thirdPartyLibs.coil)
 
     // Test
-    testImplementation(Test.coroutinesTest)
-    testImplementation(Test.mockk)
-    testImplementation(Test.archCore)
-    testImplementation(Test.junit)
-    androidTestImplementation(Test.junitTest)
-    androidTestImplementation(Test.espressoCore)
+    testImplementation(testLibs.coroutinesTest)
+    testImplementation(testLibs.mockk)
+    testImplementation(testLibs.archCoreTesting)
+    testImplementation(testLibs.junit)
+    androidTestImplementation(testLibs.junitTest)
+    androidTestImplementation(testLibs.espresso)
 }

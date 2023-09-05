@@ -63,13 +63,13 @@ dependencies {
     debugImplementation(androidLibs.toolingPreview)
     debugImplementation(androidLibs.poolingContainer)
 
-    testImplementation(Test.coroutinesTest)
-    testImplementation(Test.testCore)
-    testImplementation(Test.archCore)
-    testImplementation(Test.junit)
-    testImplementation(Test.mockk)
+    testImplementation(testLibs.coroutinesTest)
+    testImplementation(testLibs.testCore)
+    testImplementation(testLibs.archCoreTesting)
+    testImplementation(testLibs.junit)
+    testImplementation(testLibs.mockk)
 
-    androidTestImplementation(Test.junitTest)
+    androidTestImplementation(testLibs.junitTest)
     androidTestImplementation(androidLibs.uiTestJunit4)
 
 }

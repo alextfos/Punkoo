@@ -16,6 +16,9 @@ dependencyResolutionManagement {
         create("networkingLibs") {
             from(files("./gradle/networkingLibs.versions.toml"))
         }
+        create("testLibs") {
+            from(files("./gradle/testLibs.versions.toml"))
+        }
     }
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {

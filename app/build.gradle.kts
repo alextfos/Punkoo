@@ -115,14 +115,14 @@ dependencies {
 
     kapt(networkingLibs.moshiKapt)
 
-    testImplementation(Test.junit)
-    testImplementation(Test.mockk)
-    testImplementation(Test.archCore)
-    testImplementation(Test.coroutinesTest)
-    testImplementation(Test.testCore)
-    androidTestImplementation(Test.junitTest)
+    testImplementation(testLibs.junit)
+    testImplementation(testLibs.mockk)
+    testImplementation(testLibs.archCoreTesting)
+    testImplementation(testLibs.coroutinesTest)
+    testImplementation(testLibs.testCore)
+    androidTestImplementation(testLibs.junitTest)
     androidTestImplementation(androidLibs.uiTestJunit4)
-    androidTestImplementation(Test.espressoCore)
+    androidTestImplementation(testLibs.espresso)
 
     implementation(androidLibs.tooling)
     debugImplementation(androidLibs.toolingPreview)
