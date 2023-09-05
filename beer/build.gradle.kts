@@ -7,11 +7,10 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
-
+    compileSdk = PunkooProject.androidSdk
+    namespace = "com.alextfos.beer"
     defaultConfig {
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
+        minSdk = PunkooProject.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,55 +25,54 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = PunkooProject.javaVersion
+        targetCompatibility = PunkooProject.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = PunkooProject.javaVersion.toString()
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
     }
 }
 
 dependencies {
-
+    // App dependencies
     api(project(Modules.common))
     implementation(project(Modules.styles))
 
-    implementation(Material.material)
+    // Android dependencies
+    implementation(androidLibs.activity)
+    implementation(androidLibs.composeUi)
+    implementation(androidLibs.materialCompose)
+    implementation(androidLibs.navigation)
+    implementation(androidLibs.runtimeLiveData)
+    implementation(androidLibs.hiltNavigation)
+    implementation(androidLibs.paging)
+    implementation(androidLibs.lifecycleViewModel)
+    implementation(androidLibs.lifecycleRuntime)
+    implementation(androidLibs.hiltAndroid)
+    kapt(androidLibs.hiltCompiler)
 
-    implementation(Compose.activity)
-    implementation(Compose.ui)
-    implementation(Compose.material)
-    implementation(Compose.tooling)
-    implementation(Compose.navigation)
-    implementation(Compose.hiltNavigation)
-    implementation(Compose.runtimeLivedata)
-    implementation(Compose.coilCompose)
-    implementation(Compose.pagingCompose)
-    implementation(Coroutines.core)
-    implementation(Coroutines.android)
-    implementation(Api.arrowCore)
-    implementation(AndroidX.lifecycleViewModel)
-    implementation(AndroidX.lifecycleRuntime)
-    implementation(Hilt.android)
-    implementation(Compose.coilSvgCompose)
+    // Tooling Preview
+    implementation(androidLibs.tooling)
+    debugImplementation(androidLibs.toolingPreview)
+    debugImplementation(androidLibs.poolingContainer)
 
-    debugImplementation(Compose.toolingPreview)
-    debugImplementation(Compose.poolingContainer)
+    // Third Party dependencies
+    implementation(thirdPartyLibs.coil)
+    implementation(thirdPartyLibs.arrowCore)
 
-    testImplementation(Test.coroutinesTest)
-    testImplementation(Test.testCore)
-    testImplementation(Test.archCore)
-    testImplementation(Test.junit)
-    testImplementation(Test.mockk)
+    // Test dependencies
+    testImplementation(testLibs.coroutinesTest)
+    testImplementation(testLibs.testCore)
+    testImplementation(testLibs.archCoreTesting)
+    testImplementation(testLibs.junit)
+    testImplementation(testLibs.mockk)
+    androidTestImplementation(testLibs.junitTest)
+    androidTestImplementation(androidLibs.uiTestJunit4)
 
-    androidTestImplementation(Test.junitTest)
-    androidTestImplementation(ComposeTest.uiTestJunit4)
-
-    kapt(Hilt.compiler)
 }

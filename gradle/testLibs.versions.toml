@@ -1,0 +1,18 @@
+[versions]
+espresso = "3.5.1"
+junit = "4.13.2"
+junitTest = "1.1.5"
+mockk = "1.13.5"
+coroutines = "1.7.3"
+testCore = "1.5.0"
+archCoreTesting = "2.2.0"
+
+[libraries]
+espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+junit = { module = "junit:junit", version.ref = "junit" }
+junitTest = { module = "androidx.test.ext:junit-ktx", version.ref = "junitTest" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+testCore = { module = "androidx.test:core-ktx", version.ref = "testCore" }
+archCoreTesting = { module = "androidx.arch.core:core-testing", version.ref = "archCoreTesting" }
+

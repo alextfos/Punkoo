@@ -8,12 +8,15 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
+    compileSdk = PunkooProject.androidSdk
+    namespace = PunkooProject.applicationId
 
     defaultConfig {
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
-        versionCode = Android.versionCode
+        applicationId = PunkooProject.applicationId
+        minSdk = PunkooProject.minSdk
+        targetSdk = PunkooProject.androidSdk
+        versionCode = PunkooProject.versionCode
+        versionName = PunkooProject.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -37,22 +40,14 @@ android {
     productFlavors {
         File("properties").walkTopDown().forEach {
             val split = it.name.split(".")
-            if (split.size == 3) {
+            if (split.size == 2) {
                 val flavor = split[0]
-                val env = split[1]
-                val baseProperties = getProperties("properties/$flavor.properties")
-                println("Flavor: $flavor| Environment: $env")
-                create("$flavor${capitalize(env)}") {
-                    val properties = getProperties(getPropertiesFileName(flavor, env))
-
-                    applicationId = baseProperties.getProperty("build_application_id") ?: ""
-                    versionName =
-                        baseProperties.getProperty("build_version_name") ?: Android.versionName
-                    versionCode = baseProperties.getProperty("build_version_code")?.toInt() ?: Android.versionCode
+                println("Flavor: $flavor")
+                create(flavor) {
+                    val properties = getProperties(getPropertiesFileName(flavor))
                     dimension = "environment"
-                    applicationIdSuffix = applySuffix(env)
                     buildProperties(properties) { k, v ->
-                        buildConfigField("String", k.toUpperCase(), "\"$v\"")
+                        buildConfigField("String", k.uppercase(), "\"$v\"")
                     }
                 }
             }
@@ -61,80 +56,82 @@ android {
     sourceSets {
         File("properties").walkTopDown().forEach {
             val split = it.name.split(".")
-            if (split.size == 3) {
+            if (split.size == 2) {
                 val flavor = split[0]
-                val env = split[1]
-                getByName("$flavor${capitalize(env)}").res.srcDirs("src/${flavor}/res")
+                getByName(flavor).res.srcDirs("src/${flavor}/res")
             }
         }
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = PunkooProject.javaVersion
+        targetCompatibility = PunkooProject.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = PunkooProject.javaVersion.toString()
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
         compose = true
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
     }
 }
 
 dependencies {
+    // App dependencies
     implementation(project(Modules.styles))
     api(project(Modules.common))
     implementation(project(Modules.beer))
 
-    implementation(Material.material)
+    // Android dependencies
+    implementation(androidLibs.activity)
+    implementation(androidLibs.composeUi)
+    implementation(androidLibs.materialCompose)
+    implementation(androidLibs.material)
+    implementation(androidLibs.navigation)
+    implementation(androidLibs.runtimeLiveData)
+    implementation(androidLibs.paging)
+    implementation(androidLibs.lifecycleViewModel)
+    implementation(androidLibs.lifecycleRuntime)
+    implementation(androidLibs.hiltAndroid)
+    kapt(androidLibs.hiltCompiler)
 
-    implementation(Compose.activity)
-    implementation(Compose.ui)
-    implementation(Compose.material)
-    implementation(Compose.coilCompose)
-    implementation(Compose.tooling)
-    implementation(Compose.navigation)
-    implementation(Compose.hiltNavigation)
-    implementation(Compose.runtimeLivedata)
-    implementation(Compose.coilSvgCompose)
-    implementation(AndroidX.lifecycleCompose)
-    implementation(Compose.pagingCompose)
+    // Tooling Preview
+    implementation(androidLibs.tooling)
+    debugImplementation(androidLibs.toolingPreview)
+    debugImplementation(androidLibs.poolingContainer)
 
-    implementation(Api.retrofit)
-    implementation(Api.retrofitConverter)
-    implementation(Api.httpLoggingInterceptor)
-    implementation(Api.arrowCore)
-    implementation(Api.moshi)
-    implementation(Api.moshiAdapters)
+    // Networking dependencies
+    implementation(networkingLibs.retrofit)
+    implementation(networkingLibs.retrofitConverter)
+    implementation(networkingLibs.loggingInterceptor)
+    implementation(networkingLibs.moshi)
+    implementation(networkingLibs.moshiAdapters)
+    kapt(networkingLibs.moshiKapt)
+    debugImplementation(networkingLibs.chucker)
+    releaseImplementation(networkingLibs.chuckerNoOp)
 
-    implementation(AndroidX.lifecycleViewModel)
-    implementation(AndroidX.lifecycleRuntime)
+    // Third Party dependencies
+    implementation(thirdPartyLibs.coil)
+    implementation(thirdPartyLibs.arrowCore)
 
-    implementation(Hilt.android)
-    kapt(Api.moshiKapt)
-    kapt(Hilt.compiler)
+    // Test dependencies
+    testImplementation(testLibs.junit)
+    testImplementation(testLibs.mockk)
+    testImplementation(testLibs.archCoreTesting)
+    testImplementation(testLibs.coroutinesTest)
+    testImplementation(testLibs.testCore)
+    androidTestImplementation(testLibs.junitTest)
+    androidTestImplementation(androidLibs.uiTestJunit4)
+    androidTestImplementation(testLibs.espresso)
 
-    testImplementation(Test.junit)
-    testImplementation(Test.mockk)
-    testImplementation(Test.archCore)
-    testImplementation(Test.coroutinesTest)
-    testImplementation(Test.testCore)
-    androidTestImplementation(Test.junitTest)
-    androidTestImplementation(ComposeTest.uiTestJunit4)
-    androidTestImplementation(Test.espressoCore)
-
-    debugImplementation(Compose.toolingPreview)
-    debugImplementation(Compose.poolingContainer)
-    debugImplementation(Api.chucker)
-    releaseImplementation(Api.chuckerNoOp)
 }

@@ -4,11 +4,10 @@ plugins {
 }
 
 android {
-    compileSdk = Android.compileSdk
-
+    compileSdk = PunkooProject.androidSdk
+    namespace = "com.alextfos.punkoo.styles"
     defaultConfig {
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
+        minSdk = PunkooProject.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -24,20 +23,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = PunkooProject.javaVersion
+        targetCompatibility = PunkooProject.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = PunkooProject.javaVersion.toString()
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
     }
 }
 
 dependencies {
-    implementation(Compose.material)
+    implementation(androidLibs.materialCompose)
 }

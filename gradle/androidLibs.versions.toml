@@ -1,0 +1,29 @@
+[versions]
+activity = "1.7.2"
+lifecycle = "2.6.1"
+navigation = "2.7.1"
+compose = "1.5.0"
+material = "1.9.0"
+poolingContainer = "1.0.0"
+hiltNavigation = "1.0.0"
+paging = "3.2.0"
+hilt = "2.48"
+
+[libraries]
+activity = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+lifecycleViewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycleRuntime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+composeUi = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+materialCompose = { module = "androidx.compose.material:material", version.ref = "compose" }
+runtimeLiveData = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose" }
+tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+toolingPreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+poolingContainer = { module = "androidx.customview:customview-poolingcontainer", version.ref = "poolingContainer" }
+uiTestJunit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+hiltNavigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
+paging = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hiltPlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt"}
