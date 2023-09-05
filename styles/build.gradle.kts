@@ -8,7 +8,6 @@ android {
     namespace = "com.alextfos.punkoo.styles"
     defaultConfig {
         minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

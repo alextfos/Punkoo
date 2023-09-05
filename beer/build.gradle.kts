@@ -11,7 +11,6 @@ android {
     namespace = "com.alextfos.beer"
     defaultConfig {
         minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
