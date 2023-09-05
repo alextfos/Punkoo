@@ -127,6 +127,6 @@ dependencies {
     debugImplementation(androidLibs.toolingPreview)
     debugImplementation(androidLibs.poolingContainer)
 
-    debugImplementation(Api.chucker)
-    releaseImplementation(Api.chuckerNoOp)
+    debugImplementation(networkingLibs.chucker)
+    releaseImplementation(networkingLibs.chuckerNoOp)
 }
