@@ -48,11 +48,9 @@ dependencies {
     // Project
     api(project(Modules.styles))
 
-    //implementation(AndroidX.core)
-    implementation(androidLibs.material)
     implementation(androidLibs.navigation)
     implementation(androidLibs.composeUi)
-    implementation(Compose.material)
+    implementation(androidLibs.material)
     implementation(Compose.tooling)
     implementation(Compose.pagingCompose)
     implementation(androidLibs.activity)

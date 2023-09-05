@@ -44,11 +44,9 @@ dependencies {
     api(project(Modules.common))
     implementation(project(Modules.styles))
 
-    implementation(androidLibs.material)
-
     implementation(androidLibs.activity)
     implementation(androidLibs.composeUi)
-    implementation(Compose.material)
+    implementation(androidLibs.material)
     implementation(Compose.tooling)
     implementation(androidLibs.navigation)
     implementation(Compose.hiltNavigation)
