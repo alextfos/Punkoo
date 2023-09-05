@@ -1,6 +1,6 @@
 [versions]
 buildTools = "8.1.1"
-kotlin = "1.7.20"
+kotlin = "1.9.10"
 
 [libraries]
 buildTools = { module = "com.android.tools.build:gradle", version.ref = "buildTools" }

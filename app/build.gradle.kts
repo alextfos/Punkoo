@@ -93,6 +93,7 @@ dependencies {
 
     implementation(androidLibs.activity)
     implementation(androidLibs.composeUi)
+    implementation(androidLibs.materialCompose)
     implementation(androidLibs.material)
     implementation(thirdPartyLibs.coil)
     implementation(androidLibs.navigation)

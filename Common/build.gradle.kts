@@ -50,7 +50,7 @@ dependencies {
 
     implementation(androidLibs.navigation)
     implementation(androidLibs.composeUi)
-    implementation(androidLibs.material)
+    implementation(androidLibs.materialCompose)
     implementation(androidLibs.paging)
     implementation(androidLibs.activity)
     implementation(androidLibs.runtimeLiveData)

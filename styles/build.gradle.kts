@@ -38,5 +38,5 @@ android {
 }
 
 dependencies {
-    implementation(androidLibs.material)
+    implementation(androidLibs.materialCompose)
 }

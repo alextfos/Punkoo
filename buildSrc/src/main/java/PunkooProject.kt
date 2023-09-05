@@ -16,5 +16,5 @@ object PunkooProject {
 
     // Compile config
     val javaVersion = JavaVersion.VERSION_1_8
-    const val composeCompilerVersion = "1.3.2"
+    const val composeCompilerVersion = "1.5.3"
 }

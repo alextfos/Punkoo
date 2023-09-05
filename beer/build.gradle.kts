@@ -46,7 +46,7 @@ dependencies {
 
     implementation(androidLibs.activity)
     implementation(androidLibs.composeUi)
-    implementation(androidLibs.material)
+    implementation(androidLibs.materialCompose)
     implementation(androidLibs.navigation)
     implementation(androidLibs.runtimeLiveData)
     implementation(androidLibs.hiltNavigation)
