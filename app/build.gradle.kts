@@ -99,18 +99,19 @@ dependencies {
     implementation(androidLibs.runtimeLiveData)
     implementation(Compose.pagingCompose)
 
-    implementation(Api.retrofit)
-    implementation(Api.retrofitConverter)
+    // Networking
+    implementation(networkingLibs.retrofit)
+    implementation(networkingLibs.retrofitConverter)
     implementation(Api.httpLoggingInterceptor)
     implementation(Api.arrowCore)
-    implementation(Api.moshi)
-    implementation(Api.moshiAdapters)
+    implementation(networkingLibs.moshi)
+    implementation(networkingLibs.moshiAdapters)
 
     implementation(androidLibs.lifecycleViewModel)
     implementation(androidLibs.lifecycleRuntime)
 
     implementation(Hilt.android)
-    kapt(Api.moshiKapt)
+    kapt(networkingLibs.moshiKapt)
     kapt(Hilt.compiler)
 
     testImplementation(Test.junit)

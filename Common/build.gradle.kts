@@ -60,9 +60,9 @@ dependencies {
 
     // API
     implementation(Api.arrowCore)
-    api(Api.retrofit)
+    api(networkingLibs.retrofit)
     implementation(Api.okHttp)
-    api(Api.moshi)
+    api(networkingLibs.moshi)
 
     // Compose Preview
     implementation(androidLibs.tooling)
