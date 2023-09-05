@@ -15,6 +15,6 @@ object PunkooProject {
     val versionCode: Int = LocalDateTime.now().format(ofPattern("yyyyMMddHH")).toInt()
 
     // Compile config
-    val javaVersion = JavaVersion.VERSION_1_8
+    val javaVersion = JavaVersion.VERSION_17
     const val composeCompilerVersion = "1.5.3"
 }
