@@ -8,13 +8,13 @@ plugins {
 }
 
 android {
-    compileSdk = PunkooProject.compileSdk
+    compileSdk = PunkooProject.androidSdk
     namespace = PunkooProject.applicationId
 
     defaultConfig {
         applicationId = PunkooProject.applicationId
         minSdk = PunkooProject.minSdk
-        targetSdk = PunkooProject.targetSdk
+        targetSdk = PunkooProject.androidSdk
         versionCode = PunkooProject.versionCode
         versionName = PunkooProject.versionName
 

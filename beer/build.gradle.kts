@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    compileSdk = PunkooProject.compileSdk
+    compileSdk = PunkooProject.androidSdk
     namespace = "com.alextfos.beer"
     defaultConfig {
         minSdk = PunkooProject.minSdk

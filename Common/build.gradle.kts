@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdk = PunkooProject.compileSdk
+    compileSdk = PunkooProject.androidSdk
     namespace = "com.alextfos.punkoo.common"
 
     defaultConfig {
