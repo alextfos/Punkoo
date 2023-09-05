@@ -23,11 +23,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = PunkooProject.javaVersion
+        targetCompatibility = PunkooProject.javaVersion
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = PunkooProject.javaVersion.toString()
     }
     buildFeatures {
         compose = true
