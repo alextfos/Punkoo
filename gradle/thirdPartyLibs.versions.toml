@@ -1,7 +1,9 @@
 [versions]
 coil = "2.2.2"
 timber = "5.0.1"
+arrowCore = "1.1.5"
 
 [libraries]
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+arrowCore = { module = "io.arrow-kt:arrow-core", version.ref = "arrowCore" }

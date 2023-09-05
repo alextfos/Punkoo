@@ -10,8 +10,7 @@ import java.net.UnknownHostException
 const val http404 = 404
 
 fun Throwable.toError(): Error = when (this) {
-    is IOException,
-    is UnknownHostException -> Error.Connectivity(this.message ?: "")
+    is IOException-> Error.Connectivity(this.message ?: "")
     is HttpException -> {
         if (this.code() == http404) {
             Error.EmptyView("${this.code()} - empty-view")

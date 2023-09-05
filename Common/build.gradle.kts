@@ -59,9 +59,9 @@ dependencies {
     api(thirdPartyLibs.timber)
 
     // API
-    implementation(Api.arrowCore)
+    implementation(thirdPartyLibs.arrowCore)
     api(networkingLibs.retrofit)
-    implementation(Api.okHttp)
+    implementation(networkingLibs.okHttp)
     api(networkingLibs.moshi)
 
     // Compose Preview

@@ -102,8 +102,8 @@ dependencies {
     // Networking
     implementation(networkingLibs.retrofit)
     implementation(networkingLibs.retrofitConverter)
-    implementation(Api.httpLoggingInterceptor)
-    implementation(Api.arrowCore)
+    implementation(networkingLibs.loggingInterceptor)
+    implementation(thirdPartyLibs.arrowCore)
     implementation(networkingLibs.moshi)
     implementation(networkingLibs.moshiAdapters)
 
