@@ -39,22 +39,14 @@ android {
     productFlavors {
         File("properties").walkTopDown().forEach {
             val split = it.name.split(".")
-            if (split.size == 3) {
+            if (split.size == 2) {
                 val flavor = split[0]
-                val env = split[1]
-                val baseProperties = getProperties("properties/$flavor.properties")
-                println("Flavor: $flavor| Environment: $env")
-                create("$flavor${capitalize(env)}") {
-                    val properties = getProperties(getPropertiesFileName(flavor, env))
-
-                    applicationId = baseProperties.getProperty("build_application_id") ?: ""
-                    versionName =
-                        baseProperties.getProperty("build_version_name") ?: Android.versionName
-                    versionCode = baseProperties.getProperty("build_version_code")?.toInt() ?: Android.versionCode
+                println("Flavor: $flavor")
+                create(flavor) {
+                    val properties = getProperties(getPropertiesFileName(flavor))
                     dimension = "environment"
-                    applicationIdSuffix = applySuffix(env)
                     buildProperties(properties) { k, v ->
-                        buildConfigField("String", k.toUpperCase(), "\"$v\"")
+                        buildConfigField("String", k.uppercase(), "\"$v\"")
                     }
                 }
             }
@@ -63,10 +55,9 @@ android {
     sourceSets {
         File("properties").walkTopDown().forEach {
             val split = it.name.split(".")
-            if (split.size == 3) {
+            if (split.size == 2) {
                 val flavor = split[0]
-                val env = split[1]
-                getByName("$flavor${capitalize(env)}").res.srcDirs("src/${flavor}/res")
+                getByName(flavor).res.srcDirs("src/${flavor}/res")
             }
         }
     }
@@ -76,7 +67,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     buildFeatures {
         buildConfig = true

@@ -5,20 +5,20 @@ fun buildProperties(
     properties: Properties,
     onProperty: (key: String, value: String) -> Unit
 ) {
-    val enums = properties.propertyNames() as Enumeration<String>
+    val enums = properties.propertyNames() as Enumeration<*>
 
     while (enums.hasMoreElements()) {
-        val key = enums.nextElement()
+        val key = enums.nextElement() as? String
         var value = properties.getProperty(key)
 
-        if (key.startsWith("config_")) {
+        if (key?.startsWith("config_") == true) {
             onProperty.invoke(key, value)
         }
     }
 }
 
-fun getPropertiesFileName(flavor: String, environment: String): String {
-    val fileName = "properties/$flavor.$environment.properties"
+fun getPropertiesFileName(flavor: String): String {
+    val fileName = "properties/$flavor.properties"
     println(fileName)
     return fileName
 }
@@ -32,10 +32,3 @@ fun getProperties(file: String): Properties {
 
     return properties
 }
-
-fun applySuffix(env: String) = when (env) {
-    "pre" -> ".pre"
-    else -> ""
-}
-
-fun capitalize(str: String) = str[0].toUpperCase() + str.substring(1)
