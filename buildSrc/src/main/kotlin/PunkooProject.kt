@@ -4,17 +4,17 @@ import java.time.format.DateTimeFormatter.ofPattern
 
 object PunkooProject {
 
-    const val applicationId = "com.alextfos.punkoo"
+    const val APPLICATION_ID = "com.alextfos.punkoo"
 
     // AndroidSDK
-    const val minSdk = 23
-    const val androidSdk = 34
+    const val MIN_SDK = 23
+    const val ANDROID_SDK = 34
 
     // App versioning
-    const val versionName = "1.0"
+    const val VERSION_NAME = "1.0"
     val versionCode: Int = LocalDateTime.now().format(ofPattern("yyyyMMddHH")).toInt()
 
     // Compile config
     val javaVersion = JavaVersion.VERSION_17
-    const val composeCompilerVersion = "1.5.3"
+    const val COMPOSE_COMPILER_VERSION = "1.5.3"
 }

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    compileSdk = PunkooProject.androidSdk
+    compileSdk = PunkooProject.ANDROID_SDK
     namespace = "com.alextfos.punkoo.common"
 
     defaultConfig {
-        minSdk = PunkooProject.minSdk
+        minSdk = PunkooProject.MIN_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,7 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.COMPOSE_COMPILER_VERSION
     }
     packaging {
         resources {
@@ -46,7 +46,7 @@ android {
 
 dependencies {
     // App dependencies
-    api(project(Modules.styles))
+    api(project(Modules.STYLES))
 
     // Android dependencies
     implementation(androidLibs.navigation)

@@ -4,7 +4,6 @@ import com.alextfos.punkoo.common.domain.entity.Error
 import retrofit2.HttpException
 import timber.log.Timber
 import java.io.IOException
-import java.net.UnknownHostException
 
 
 const val http404 = 404

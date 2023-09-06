@@ -36,7 +36,7 @@ fun ProgressBarModule(
             .fillMaxSize()
             .background(backgroundColor)
     ) {
-        var currentRotation by remember { mutableStateOf(0f) }
+        var currentRotation by remember { mutableFloatStateOf(0f) }
 
         val rotation = remember { Animatable(currentRotation) }
 

@@ -2,7 +2,6 @@ package com.alextfos.punkoo.core
 
 import android.app.Application
 import android.util.Log
-import androidx.annotation.NonNull
 import com.alextfos.punkoo.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber

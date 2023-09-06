@@ -2,10 +2,10 @@ package com.alextfos.beer.domain
 
 import com.alextfos.beer.domain.entity.BeerBo
 
-class SampleBeerBuilder() {
-    var id = 1
-    var name = "Sample beer"
-    var numElements: Int = 1
+class SampleBeerBuilder {
+    private var id = 1
+    private var name = "Sample beer"
+    private var numElements: Int = 1
 
     fun withName(name: String): SampleBeerBuilder {
         this.name = name

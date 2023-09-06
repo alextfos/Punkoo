@@ -1,5 +1,6 @@
 package com.alextfos.beer.ui.search
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
@@ -38,9 +39,10 @@ fun SearchDrawer(
             }
             )
         }
-    ) {
+    ) { padding ->
         SearchPagedList(
-            flow
+            modifier = Modifier.padding(padding),
+            pagedSearch = flow
         )
     }
 }
