@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
+import com.alextfos.punkoo.common.R
 import com.alextfos.beer.domain.SampleBeerBuilder
 import com.alextfos.beer.domain.entity.BeerBo
 import com.alextfos.punkoo.styles.ui.theme.Theme
@@ -16,6 +18,7 @@ fun ShowBeer(beer: BeerBo) {
     Row {
         AsyncImage(
             model = beer.imageUrl,
+            placeholder = painterResource(id = R.drawable.beer),
             contentDescription = null
         )
         Text(
