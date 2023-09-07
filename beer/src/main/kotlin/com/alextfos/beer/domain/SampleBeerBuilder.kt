@@ -5,6 +5,7 @@ import com.alextfos.beer.domain.entity.BeerBo
 class SampleBeerBuilder {
     private var id = 1
     private var name = "Sample beer"
+    private var imageUrl = "https://images.punkapi.com/v2/keg.png"
     private var numElements: Int = 1
 
     fun withName(name: String): SampleBeerBuilder {
@@ -18,9 +19,16 @@ class SampleBeerBuilder {
         return this
     }
 
+    fun withImageUrl(imageUrl: String): SampleBeerBuilder {
+        this.imageUrl = imageUrl
+
+        return this
+    }
+
     fun buildSingle() = BeerBo(
         id = id,
         name = name,
+        imageUrl = imageUrl
     )
 
     fun buildList(): List<BeerBo> {
