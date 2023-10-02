@@ -26,7 +26,7 @@ fun PunkooApp(
             ThemeType.DARK
         }
     PunkooTheme(selectedTheme) {
-        InitAppScaffold(scaffoldState) {
+        PunkooScaffold(scaffoldState) {
             CreateNavigation(
                 navController,
             ) {

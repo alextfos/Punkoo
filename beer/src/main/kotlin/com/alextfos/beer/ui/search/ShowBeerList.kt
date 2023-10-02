@@ -14,7 +14,7 @@ import com.alextfos.punkoo.common.ui.components.error.ErrorView
 import kotlinx.coroutines.flow.Flow
 
 @Composable
-fun SearchPagedList(
+fun ShowBeerList(
     modifier: Modifier = Modifier,
     pagedSearch: Flow<PagingData<BeerBo>>
 ) {

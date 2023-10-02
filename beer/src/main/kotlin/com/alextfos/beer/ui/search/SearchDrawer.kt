@@ -40,7 +40,7 @@ fun SearchDrawer(
             )
         }
     ) { padding ->
-        SearchPagedList(
+        ShowBeerList(
             modifier = Modifier.padding(padding),
             pagedSearch = flow
         )

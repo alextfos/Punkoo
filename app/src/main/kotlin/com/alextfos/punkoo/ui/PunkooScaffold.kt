@@ -5,17 +5,22 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.FabPosition
 import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.alextfos.punkoo.styles.ui.theme.Theme
 
 @Composable
-fun InitAppScaffold(
+fun PunkooScaffold(
     scaffoldState: ScaffoldState,
     content: @Composable () -> Unit
 ) {
     Scaffold(
         scaffoldState = scaffoldState,
+        topBar = {
+             TopAppBar(title = { Text("Mi Aplicación") })
+        },
         backgroundColor = Theme.colors.background,
         floatingActionButtonPosition = FabPosition.Center
     ) {
