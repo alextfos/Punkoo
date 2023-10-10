@@ -15,7 +15,6 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import com.alextfos.punkoo.styles.ui.theme.Theme
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
@@ -45,7 +44,7 @@ fun ShowSearchBar(
                 }
             ),
             singleLine = true,
-            textStyle = Theme.typography.text
+            // TODO textStyle = Theme.typography.text
         )
     }
     LaunchedEffect(Unit) {

@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -13,22 +14,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import com.alextfos.punkoo.styles.ui.theme.Theme
 import com.alextfos.punkoo.common.R
 
 
 @Composable
 fun ProgressBarFullScreen() {
     ProgressBarModule(
-        backgroundColor = Theme.colors.background,
-        fillColor = Theme.colors.icon
+        backgroundColor = MaterialTheme.colorScheme.background,
+        fillColor = MaterialTheme.colorScheme.surfaceTint
     )
 }
 
 @Composable
 fun ProgressBarModule(
     backgroundColor: Color = Color.Transparent,
-    fillColor: Color = Theme.colors.icon
+    fillColor: Color = MaterialTheme.colorScheme.surfaceTint
 ) {
     Box(
         contentAlignment = Alignment.Center,

@@ -3,6 +3,7 @@ package com.alextfos.punkoo.common.ui.components.error
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,7 +13,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alextfos.punkoo.common.R
-import com.alextfos.punkoo.styles.ui.theme.Theme
 
 @Composable
 fun EmptyView(text: String? = null) {
@@ -24,8 +24,7 @@ fun EmptyView(text: String? = null) {
     ) {
         Text(
             text = text ?: stringResource(R.string.no_results_available),
-            color = Theme.colors.text,
-            style = Theme.typography.title,
+            color = MaterialTheme.colorScheme.onPrimaryContainer,
             textAlign = TextAlign.Center,
         )
     }

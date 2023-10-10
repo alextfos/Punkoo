@@ -3,9 +3,9 @@ package com.alextfos.punkoo.common.ui.components.error
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,7 +18,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.alextfos.punkoo.styles.ui.theme.Theme
 import com.alextfos.punkoo.common.domain.entity.Error
 import com.alextfos.punkoo.common.R
 import timber.log.Timber
@@ -104,37 +103,35 @@ private fun GenericErrorView(
             verticalArrangement = Arrangement.Center
         ) {
             Image(
-                colorFilter = ColorFilter.tint(Theme.colors.icon),
+                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.surfaceTint),
                 painter = painter,
                 contentDescription = stringResource(R.string.error_image_description)
             )
             Text(
-                title,
-                style = Theme.typography.title,
-                color = Theme.colors.text,
+                text = title,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
                 modifier = Modifier.padding(top = 11.dp, bottom = 4.dp)
             )
             Text(
                 text,
-                style = Theme.typography.text,
-                color = Theme.colors.text,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
                 textAlign = TextAlign.Center
             )
         }
         onRetry?.let {
             Button(
-                shape = RoundedCornerShape(Theme.objectStyle.borderRadius.buttonBorderRadius),
+                // TODO shape = RoundedCornerShape(MaterialTheme.objectStyle.borderRadius.buttonBorderRadius),
                 colors = ButtonDefaults.buttonColors(
                     //backgroundColor = Theme.colors.background
                 ),
                 onClick = it,
                 modifier = Modifier.padding(top = 24.dp),
-                //elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
+                // TODO elevation = ButtonDefaults.elevation(defaultElevation = 0.dp)
             ) {
                 Text(
                     stringResource(R.string.error_retry),
-                    style = Theme.typography.textButton,
-                    color = Theme.colors.text,
+                    // TODO style = Theme.typography.textButton,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
                 )
             }

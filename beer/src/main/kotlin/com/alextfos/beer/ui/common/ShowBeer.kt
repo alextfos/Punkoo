@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,7 +21,6 @@ import coil.compose.AsyncImage
 import com.alextfos.beer.domain.SampleBeerBuilder
 import com.alextfos.beer.domain.entity.BeerBo
 import com.alextfos.punkoo.common.R
-import com.alextfos.punkoo.styles.ui.theme.Theme
 
 @Composable
 fun ShowBeer(beer: BeerBo) {
@@ -40,14 +40,12 @@ fun ShowBeer(beer: BeerBo) {
                 modifier = Modifier.fillMaxSize().background(Color.Gray)) {
                     Text(
                         modifier = Modifier.align(Alignment.TopStart),
-                        style = Theme.typography.text,
-                        color = Theme.colors.text,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
                         text = beer.name
                     )
                     Text(
                         modifier = Modifier.align(Alignment.TopEnd),
-                        style = Theme.typography.text,
-                        color = Theme.colors.text,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
                         text = beer.tagLine
                     )
             }
