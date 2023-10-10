@@ -1,6 +1,9 @@
 package com.alextfos.punkoo.ui
 
+import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -17,18 +20,23 @@ fun PunkooApp(
     navController: NavHostController = rememberNavController(),
 ) {
     val selectedTheme = if (isSystemInDarkTheme()) {
-            ThemeType.DARK
-        } else {
-            ThemeType.LIGHT
-        }
+        ThemeType.DARK
+    } else {
+        ThemeType.LIGHT
+    }
+
     PunkooTheme(selectedTheme) {
-        PunkooScaffold {
-            CreateNavigation(
-                navController,
-            ) {
-                it.addBeerListScreen(navController)
-                it.addSearchScreen(navController)
-                it.addRandomScreen(navController)
+        Surface(
+            color = MaterialTheme.colorScheme.background
+        ) {
+            PunkooScaffold {
+                CreateNavigation(
+                    navController,
+                ) {
+                    it.addBeerListScreen(navController)
+                    it.addSearchScreen(navController)
+                    it.addRandomScreen(navController)
+                }
             }
         }
     }

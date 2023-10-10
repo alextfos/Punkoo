@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alextfos.punkoo.common.domain.entity.Error
 import com.alextfos.punkoo.common.R
+import com.alextfos.punkoo.styles.ui.theme.LocalSpacing
 import timber.log.Timber
 
 @Composable
@@ -120,7 +121,7 @@ private fun GenericErrorView(
         }
         onRetry?.let {
             Button(
-                // TODO shape = RoundedCornerShape(MaterialTheme.objectStyle.borderRadius.buttonBorderRadius),
+                shape = RoundedCornerShape(LocalSpacing.current.cornerRadius),
                 colors = ButtonDefaults.buttonColors(
                     //backgroundColor = Theme.colors.background
                 ),

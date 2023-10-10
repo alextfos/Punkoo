@@ -33,7 +33,7 @@ fun ShowBeer(beer: BeerBo) {
                 .fillMaxWidth()
                 .height(100.dp)
                 .padding(16.dp)
-                .background(Color.Gray)
+                .background(MaterialTheme.colorScheme.tertiary)
                 .align(Alignment.BottomCenter)
         ) {
             Box(
