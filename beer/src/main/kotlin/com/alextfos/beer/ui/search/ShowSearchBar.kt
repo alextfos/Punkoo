@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.OutlinedTextField
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -32,7 +32,7 @@ fun ShowSearchBar(
         OutlinedTextField(
             modifier = Modifier.focusRequester(focusRequester),
             value = searchViewModel.searchValue ?: "",
-            onValueChange = { newValue ->
+            onValueChange = { _ ->
                 search()
             },
             keyboardOptions = KeyboardOptions(
