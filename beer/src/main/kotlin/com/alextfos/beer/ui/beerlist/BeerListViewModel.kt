@@ -12,8 +12,6 @@ import arrow.core.left
 import com.alextfos.beer.domain.entity.BeerBo
 import com.alextfos.beer.domain.usecase.GetBeerListUseCase
 import com.alextfos.beer.ui.common.BeerBoFlowState
-import com.alextfos.beer.ui.common.BeerBoState
-import com.alextfos.punkoo.common.domain.usecase.UseCaseResult
 import com.alextfos.punkoo.common.ext.toError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow

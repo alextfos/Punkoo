@@ -1,11 +1,11 @@
 package com.alextfos.punkoo.di
 
 import android.content.Context
+import com.alextfos.punkoo.BuildConfig
+import com.alextfos.punkoo.common.data.interceptors.ConnectivityInterceptor
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
-import com.alextfos.punkoo.BuildConfig
-import com.alextfos.punkoo.common.data.interceptors.ConnectivityInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -17,7 +17,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 

@@ -8,15 +8,15 @@ plugins {
 }
 
 android {
-    compileSdk = PunkooProject.androidSdk
-    namespace = PunkooProject.applicationId
+    compileSdk = PunkooProject.ANDROID_SDK
+    namespace = PunkooProject.APPLICATION_ID
 
     defaultConfig {
-        applicationId = PunkooProject.applicationId
-        minSdk = PunkooProject.minSdk
-        targetSdk = PunkooProject.androidSdk
+        applicationId = PunkooProject.APPLICATION_ID
+        minSdk = PunkooProject.MIN_SDK
+        targetSdk = PunkooProject.ANDROID_SDK
         versionCode = PunkooProject.versionCode
-        versionName = PunkooProject.versionName
+        versionName = PunkooProject.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -82,15 +82,15 @@ android {
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.COMPOSE_COMPILER_VERSION
     }
 }
 
 dependencies {
     // App dependencies
-    implementation(project(Modules.styles))
-    api(project(Modules.common))
-    implementation(project(Modules.beer))
+    implementation(project(Modules.STYLES))
+    api(project(Modules.COMMON))
+    implementation(project(Modules.BEER))
 
     // Android dependencies
     implementation(androidLibs.activity)

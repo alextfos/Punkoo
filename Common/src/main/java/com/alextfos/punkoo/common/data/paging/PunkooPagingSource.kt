@@ -4,8 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import timber.log.Timber
 
-abstract class PunkooPagingSource<T : Any>(
-) : PagingSource<Int, T>() {
+abstract class PunkooPagingSource<T : Any> : PagingSource<Int, T>() {
     override fun getRefreshKey(state: PagingState<Int, T>): Int? {
         return state.anchorPosition
     }

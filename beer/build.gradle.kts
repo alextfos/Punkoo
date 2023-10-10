@@ -7,10 +7,10 @@ plugins {
 }
 
 android {
-    compileSdk = PunkooProject.androidSdk
+    compileSdk = PunkooProject.ANDROID_SDK
     namespace = "com.alextfos.beer"
     defaultConfig {
-        minSdk = PunkooProject.minSdk
+        minSdk = PunkooProject.MIN_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,14 +35,14 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = PunkooProject.composeCompilerVersion
+        kotlinCompilerExtensionVersion = PunkooProject.COMPOSE_COMPILER_VERSION
     }
 }
 
 dependencies {
     // App dependencies
-    api(project(Modules.common))
-    implementation(project(Modules.styles))
+    api(project(Modules.COMMON))
+    implementation(project(Modules.STYLES))
 
     // Android dependencies
     implementation(androidLibs.activity)

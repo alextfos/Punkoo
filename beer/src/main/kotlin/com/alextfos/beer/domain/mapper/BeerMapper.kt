@@ -7,5 +7,7 @@ fun List<BeerDto>.toBeerBoList() = map { it.toBeerBo() }
 
 fun BeerDto.toBeerBo() = BeerBo(
     id = id ?: 0,
-    name = name ?: ""
+    name = name ?: "",
+    tagLine = tagline ?: "",
+    imageUrl = imageUrl ?: ""
 )
