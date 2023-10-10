@@ -30,9 +30,7 @@ fun PunkooApp(
             color = MaterialTheme.colorScheme.background
         ) {
             PunkooScaffold {
-                CreateNavigation(
-                    navController,
-                ) {
+                CreateNavigation(navController) {
                     it.addBeerListScreen(navController)
                     it.addSearchScreen(navController)
                     it.addRandomScreen(navController)

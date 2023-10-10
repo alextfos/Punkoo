@@ -1,12 +1,16 @@
 package com.alextfos.beer.ui.common
 
+import android.widget.Space
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -36,18 +40,22 @@ fun ShowBeer(beer: BeerBo) {
                 .background(MaterialTheme.colorScheme.tertiary)
                 .align(Alignment.BottomCenter)
         ) {
-            Box(
-                modifier = Modifier.fillMaxSize().background(Color.Gray)) {
-                    Text(
-                        modifier = Modifier.align(Alignment.TopStart),
-                        color = MaterialTheme.colorScheme.onPrimaryContainer,
-                        text = beer.name
-                    )
-                    Text(
-                        modifier = Modifier.align(Alignment.TopEnd),
-                        color = MaterialTheme.colorScheme.onPrimaryContainer,
-                        text = beer.tagLine
-                    )
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.Gray)
+            ) {
+                Text(
+                    modifier = Modifier.weight(1f),
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    text = beer.name
+                )
+                Spacer(Modifier.width(120.dp))
+                Text(
+                    modifier = Modifier.weight(1f),
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    text = beer.tagLine
+                )
             }
         }
         AsyncImage(
@@ -66,5 +74,10 @@ fun ShowBeer(beer: BeerBo) {
 @Preview
 @Composable
 fun SearchItemPreview() {
-    ShowBeer(SampleBeerBuilder().buildSingle())
+    ShowBeer(
+        SampleBeerBuilder()
+            .withName("Long nameeee nameee nameeee")
+            .withTagLine("Super beeeeer beeeer beeeeeer")
+            .buildSingle()
+    )
 }

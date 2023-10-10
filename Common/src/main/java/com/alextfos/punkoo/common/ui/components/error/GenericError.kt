@@ -1,7 +1,12 @@
 package com.alextfos.punkoo.common.ui.components.error
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -18,9 +23,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.alextfos.punkoo.common.domain.entity.Error
 import com.alextfos.punkoo.common.R
-import com.alextfos.punkoo.styles.ui.theme.LocalSpacing
+import com.alextfos.punkoo.common.domain.entity.Error
+import com.alextfos.punkoo.styles.ui.theme.spacing
 import timber.log.Timber
 
 @Composable
@@ -121,7 +126,7 @@ private fun GenericErrorView(
         }
         onRetry?.let {
             Button(
-                shape = RoundedCornerShape(LocalSpacing.current.cornerRadius),
+                shape = RoundedCornerShape(MaterialTheme.spacing.cornerRadius),
                 colors = ButtonDefaults.buttonColors(
                     //backgroundColor = Theme.colors.background
                 ),
