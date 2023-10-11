@@ -1,14 +1,14 @@
 package com.alextfos.beer.ui.detail
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.alextfos.punkoo.common.navigation.Screen
+import com.alextfos.beer.di.BeerDetailContainer
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import javax.inject.Named
 
 @HiltViewModel
 class BeerDetailViewModel @Inject constructor(
-    savedStateHandle: SavedStateHandle
+    @Named("beerDetail") private val beerDetailContainer: BeerDetailContainer
 ) : ViewModel() {
-    val beerId = savedStateHandle.get<Int>(Screen.BeerDetail.arguments[0].name) ?: ""
+    val beer = beerDetailContainer.beerUi
 }

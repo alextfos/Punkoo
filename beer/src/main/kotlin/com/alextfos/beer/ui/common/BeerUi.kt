@@ -1,14 +1,12 @@
-package com.alextfos.beer.domain.entity
+package com.alextfos.beer.ui.common
 
-import java.io.Serializable
-
-data class BeerBo(
+data class BeerUi(
     val id: Int,
     val name: String,
     val tagLine: String,
     val description: String,
     val imageUrl: String,
-    val ibu: Float?,
+    val ibu: String,
     val foodPairing: List<String>,
     val brewersTips: String
 )

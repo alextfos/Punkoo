@@ -1,6 +1,5 @@
 package com.alextfos.beer.ui.common
 
-import android.widget.Space
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
@@ -25,19 +23,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.alextfos.beer.domain.SampleBeerBuilder
-import com.alextfos.beer.domain.entity.BeerBo
+import com.alextfos.beer.ui.SampleBeerUiBuilder
 import com.alextfos.punkoo.common.R
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
 import com.alextfos.punkoo.styles.ui.theme.spacing
 
 @Composable
-fun ShowBeer(beer: BeerBo, onBeerClick: (Int)-> Unit) {
+fun ShowBeer(beer: BeerUi, onBeerClick: (BeerUi)-> Unit) {
     Box(
         modifier = Modifier
             .height(160.dp)
-            .clickable { onBeerClick(beer.id) }
+            .clickable { onBeerClick(beer) }
     ) {
         ElevatedCard(
             colors = CardDefaults.cardColors(
@@ -96,7 +93,7 @@ fun SearchItemDarkPreview() {
         ThemeType.DARK
     ) {
         ShowBeer(
-            SampleBeerBuilder()
+            SampleBeerUiBuilder()
                 .withName("Long nameeee nameee nameeee")
                 .withTagLine("Super beeeeer beeeer beeeeeer")
                 .buildSingle()
@@ -111,7 +108,7 @@ fun SearchItemLightPreview() {
         ThemeType.LIGHT
     ) {
         ShowBeer(
-            SampleBeerBuilder()
+            SampleBeerUiBuilder()
                 .withName("Long nameeee nameee nameeee")
                 .withTagLine("Super beeeeer beeeer beeeeeer")
                 .buildSingle()

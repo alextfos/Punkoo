@@ -16,15 +16,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.alextfos.beer.domain.SampleBeerBuilder
-import com.alextfos.beer.domain.entity.BeerBo
-import com.alextfos.punkoo.common.R as commonR
+import com.alextfos.beer.ui.SampleBeerUiBuilder
+import com.alextfos.beer.ui.common.BeerUi
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
+import com.alextfos.punkoo.common.R as commonR
 
 
 @Composable
-fun BeerDetailDrawer(beer: BeerBo) {
+fun BeerDetailDrawer(beer: BeerUi) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -51,9 +51,9 @@ fun BeerDetailDrawer(beer: BeerBo) {
         Text(
             text = beer.description
         )
-        beer.ibu?.let {
+        if (beer.ibu.isNotBlank()) {
             Text(
-                text = stringResource(commonR.string.beer_detail_ibu, String.format("%.1f", it))
+                text = stringResource(commonR.string.beer_detail_ibu, beer.ibu)
             )
         }
         Text(
@@ -75,7 +75,7 @@ fun BeerDetailDrawer(beer: BeerBo) {
 fun BeerDetailPreviewLight() {
     PunkooTheme(ThemeType.LIGHT) {
         BeerDetailDrawer(
-            SampleBeerBuilder()
+            SampleBeerUiBuilder()
             .withName("Long nameeee nameee nameeee")
             .withTagLine("Super beeeeer beeeer beeeeeer")
             .buildSingle()
@@ -88,7 +88,7 @@ fun BeerDetailPreviewLight() {
 fun BeerDetailPreviewDark() {
     PunkooTheme(ThemeType.DARK) {
         BeerDetailDrawer(
-            SampleBeerBuilder()
+            SampleBeerUiBuilder()
                 .withName("Long nameeee nameee nameeee")
                 .withTagLine("Super beeeeer beeeer beeeeeer")
                 .buildSingle()

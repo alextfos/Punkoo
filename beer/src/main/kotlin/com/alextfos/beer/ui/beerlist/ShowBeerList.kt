@@ -9,6 +9,7 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.alextfos.beer.domain.entity.BeerBo
+import com.alextfos.beer.ui.common.BeerUi
 import com.alextfos.beer.ui.common.ShowBeer
 import com.alextfos.punkoo.common.ui.components.error.ErrorView
 import kotlinx.coroutines.flow.Flow
@@ -16,8 +17,8 @@ import kotlinx.coroutines.flow.Flow
 @Composable
 fun ShowBeerList(
     modifier: Modifier = Modifier,
-    pagedSearch: Flow<PagingData<BeerBo>>,
-    onBeerClick: (Int)-> Unit
+    pagedSearch: Flow<PagingData<BeerUi>>,
+    onBeerClick: (BeerUi)-> Unit
 ) {
 
     val searchList = pagedSearch.collectAsLazyPagingItems()
@@ -31,10 +32,12 @@ fun ShowBeerList(
     } else {
         LazyColumn(modifier = modifier) {
             items(searchList.itemCount) { index ->
-                ShowBeer(
-                    beer = searchList[index]!!,
-                    onBeerClick
-                )
+                searchList[index]?.let { beer ->
+                    ShowBeer(
+                        beer = beer,
+                        onBeerClick
+                    )
+                }
             }
 
             searchList.apply {

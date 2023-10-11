@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.alextfos.punkoo.common.navigation.Screen
+import com.alextfos.beer.navigation.Screen
 
 @Composable
 fun PunkooNavigation(

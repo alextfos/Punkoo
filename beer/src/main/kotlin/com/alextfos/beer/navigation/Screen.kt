@@ -1,8 +1,9 @@
-package com.alextfos.punkoo.common.navigation
+package com.alextfos.beer.navigation
 
 import androidx.navigation.NamedNavArgument
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
+import com.alextfos.beer.ui.common.BeerUi
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
 
 sealed class Screen(
     val route: String,
@@ -14,21 +15,15 @@ sealed class Screen(
         arguments = emptyList()
     )
     data object BeerDetail : Screen(
-        route = "BeerDetail/{beerId}",
-        baseRoute = "BeerDetail",
-        arguments = listOf(
-            navArgument("beerId")
-            {
-                type = NavType.IntType
-            })
+        route = "BeerDetail",
+        arguments = listOf()
     ) {
-        fun createRoute(beerId: Int) = "$baseRoute/$beerId"
+        fun createRoute(beerUi: BeerUi): String {
+            val moshi = Moshi.Builder().build()
+            val jsonAdapter: JsonAdapter<BeerUi> = moshi.adapter(BeerUi::class.java)
+            return "$baseRoute/${jsonAdapter.toJson(beerUi)}"
+        }
     }
-    data object SearchBeer
-        : Screen(
-        route = "SearchBeer",
-        arguments = emptyList()
-    )
 
     companion object {
         fun findRoute(route: String?): Screen {

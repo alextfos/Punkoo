@@ -26,7 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import com.alextfos.beer.navigation.addBeerDetailScreen
 import com.alextfos.beer.navigation.addBeerListScreen
 import com.alextfos.punkoo.R
-import com.alextfos.punkoo.common.navigation.Screen
+import com.alextfos.beer.navigation.Screen
 import com.alextfos.punkoo.navigation.PunkooNavigation
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
@@ -84,7 +84,7 @@ fun PunkooApp(
 
                     PunkooNavigation(navController) { navBuilder ->
                         navBuilder.addBeerListScreen {
-                            navController.navigate(Screen.BeerDetail.createRoute(it))
+                            navController.navigate(Screen.BeerDetail.route)
                         }
                         navBuilder.addBeerDetailScreen()
                     }
