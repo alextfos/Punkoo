@@ -1,4 +1,4 @@
-package com.alextfos.beer.ui.search
+package com.alextfos.beer.ui.beerlist
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
