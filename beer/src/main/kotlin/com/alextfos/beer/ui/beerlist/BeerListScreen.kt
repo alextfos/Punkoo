@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.alextfos.punkoo.common.ui.navigation.Screen
 
-fun NavGraphBuilder.addBeerListScreen(navController: NavController) {
+fun NavGraphBuilder.addBeerListScreen() {
     composable(
         route = Screen.BeerList.route
     ) {

@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.alextfos.punkoo.common.ui.navigation.Screen
 
-fun NavGraphBuilder.addSearchScreen(navController: NavController) {
+fun NavGraphBuilder.addSearchScreen() {
     composable(
         route = Screen.Search.route
     ) {

@@ -8,4 +8,5 @@
     <string name="error_retry">Intentar de nuevo</string>
     <string name="error_image_description">Error imagen</string>
     <string name="no_results_available">No hay resultados disponibles</string>
+    <string name="action_search">Buscar</string>
 </resources>
