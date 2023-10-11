@@ -5,8 +5,6 @@ import androidx.paging.map
 import com.alextfos.beer.data.BeerRepository
 import com.alextfos.beer.domain.entity.BeerBo
 import com.alextfos.beer.domain.mapper.toBeerBo
-import com.alextfos.punkoo.common.domain.usecase.UseCaseResult
-import com.alextfos.punkoo.common.domain.usecase.runUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -21,20 +19,4 @@ class GetBeerListUseCase @Inject constructor(
                 beerDto.toBeerBo()
             }
         }
-
-    fun invokeRunUseCase() : UseCaseResult<Flow<PagingData<BeerBo>>> = runUseCase {
-        beerRepository.getBeerList().map {
-            it.map { beerDto ->
-                beerDto.toBeerBo()
-            }
-        }
-    }
 }
-
-/*
-
-INVOKE con runUseCase
-
-
-
-*/

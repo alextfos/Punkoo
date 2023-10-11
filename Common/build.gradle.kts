@@ -70,7 +70,6 @@ dependencies {
     // Third Party dependencies
     api(thirdPartyLibs.timber)
     implementation(thirdPartyLibs.coil)
-    implementation(thirdPartyLibs.arrowCore)
 
     // Test dependencies
     testImplementation(testLibs.coroutinesTest)

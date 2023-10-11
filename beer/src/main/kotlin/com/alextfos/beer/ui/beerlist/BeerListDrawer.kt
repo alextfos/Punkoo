@@ -9,15 +9,4 @@ fun BeerListDrawer(
     viewModel: BeerListViewModel = hiltViewModel()
 ) {
     ShowBeerList(pagedSearch = viewModel.getBeerList())
-    /*
-    viewModel.state.beerList.fold(
-        ifRight = {
-            it?.let { list ->
-                SearchPagedList(list)
-            }
-        }, ifLeft = {
-            ErrorView()
-        }
-    )
-    */
 }
