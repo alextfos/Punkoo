@@ -1,6 +1,16 @@
 package com.alextfos.beer.ui.beerlist
 
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import com.alextfos.punkoo.common.navigation.Screen
+import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.alextfos.beer.ui.search.ShowBeerList
 
+@Composable
+fun BeerListDrawer(
+    viewModel: BeerListViewModel = hiltViewModel(),
+    onBeerClick: (Int) -> Unit
+) {
+    ShowBeerList(
+        pagedSearch = viewModel.getBeerList(),
+        onBeerClick = onBeerClick
+    )
+}

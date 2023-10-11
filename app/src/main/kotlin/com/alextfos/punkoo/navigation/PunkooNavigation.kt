@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import com.alextfos.punkoo.common.navigation.Screen
 
 @Composable
-fun CreateNavigation(
+fun PunkooNavigation(
     navController: NavHostController,
     initNavigation: (NavGraphBuilder)->Unit
 ) {

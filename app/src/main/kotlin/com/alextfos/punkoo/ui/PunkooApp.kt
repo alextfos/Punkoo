@@ -26,7 +26,7 @@ import com.alextfos.beer.navigation.addBeerDetailScreen
 import com.alextfos.beer.navigation.addBeerListScreen
 import com.alextfos.beer.navigation.addSearchScreen
 import com.alextfos.punkoo.R
-import com.alextfos.punkoo.navigation.CreateNavigation
+import com.alextfos.punkoo.navigation.PunkooNavigation
 import com.alextfos.punkoo.common.navigation.Screen
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
@@ -77,7 +77,7 @@ fun PunkooApp(
                     modifier = Modifier
                         .padding(it)
                 ) {
-                    CreateNavigation(navController) { navBuilder ->
+                    PunkooNavigation(navController) { navBuilder ->
                         navBuilder.addBeerListScreen {
                             navController.navigate(Screen.BeerDetail.createRoute(it))
                         }
