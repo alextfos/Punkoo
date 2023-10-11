@@ -2,6 +2,7 @@ package com.alextfos.beer.ui.common
 
 import android.widget.Space
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -32,10 +33,11 @@ import com.alextfos.punkoo.styles.ui.theme.ThemeType
 import com.alextfos.punkoo.styles.ui.theme.spacing
 
 @Composable
-fun ShowBeer(beer: BeerBo) {
+fun ShowBeer(beer: BeerBo, onBeerClick: (Int)-> Unit) {
     Box(
         modifier = Modifier
             .height(160.dp)
+            .clickable { onBeerClick(beer.id) }
     ) {
         ElevatedCard(
             colors = CardDefaults.cardColors(
@@ -96,7 +98,7 @@ fun SearchItemDarkPreview() {
                 .withName("Long nameeee nameee nameeee")
                 .withTagLine("Super beeeeer beeeer beeeeeer")
                 .buildSingle()
-        )
+        ) {}
     }
 }
 
@@ -111,6 +113,6 @@ fun SearchItemLightPreview() {
                 .withName("Long nameeee nameee nameeee")
                 .withTagLine("Super beeeeer beeeer beeeeeer")
                 .buildSingle()
-        )
+        ) {}
     }
 }

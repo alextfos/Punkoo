@@ -22,10 +22,12 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.alextfos.beer.ui.beerlist.addBeerListScreen
-import com.alextfos.beer.ui.search.addSearchScreen
+import com.alextfos.beer.navigation.addBeerDetailScreen
+import com.alextfos.beer.navigation.addBeerListScreen
+import com.alextfos.beer.navigation.addSearchScreen
 import com.alextfos.punkoo.R
-import com.alextfos.punkoo.common.ui.navigation.CreateNavigation
+import com.alextfos.punkoo.navigation.CreateNavigation
+import com.alextfos.punkoo.common.navigation.Screen
 import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
 
@@ -76,8 +78,13 @@ fun PunkooApp(
                         .padding(it)
                 ) {
                     CreateNavigation(navController) { navBuilder ->
-                        navBuilder.addBeerListScreen()
-                        navBuilder.addSearchScreen()
+                        navBuilder.addBeerListScreen {
+                            navController.navigate(Screen.BeerDetail.createRoute(it))
+                        }
+                        navBuilder.addSearchScreen {
+                            navController.navigate(Screen.BeerDetail.route)
+                        }
+                        navBuilder.addBeerDetailScreen()
                     }
                 }
             }

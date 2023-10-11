@@ -16,7 +16,8 @@ import kotlinx.coroutines.flow.Flow
 @Composable
 fun ShowBeerList(
     modifier: Modifier = Modifier,
-    pagedSearch: Flow<PagingData<BeerBo>>
+    pagedSearch: Flow<PagingData<BeerBo>>,
+    onBeerClick: (Int)-> Unit
 ) {
 
     val searchList = pagedSearch.collectAsLazyPagingItems()
@@ -31,7 +32,8 @@ fun ShowBeerList(
         LazyColumn(modifier = modifier) {
             items(searchList.itemCount) { index ->
                 ShowBeer(
-                    beer = searchList[index]!!
+                    beer = searchList[index]!!,
+                    onBeerClick
                 )
             }
 

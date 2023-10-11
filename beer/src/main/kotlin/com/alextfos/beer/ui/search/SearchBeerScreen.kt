@@ -14,8 +14,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun SearchDrawer(
-    viewModel: SearchViewModel = hiltViewModel()
+fun SearchBeerScreen(
+    viewModel: SearchViewModel = hiltViewModel(),
+    onBeerClick: (Int)-> Unit
 ) {
     var flow = viewModel.getPagedSearch()
 
@@ -37,13 +38,14 @@ fun SearchDrawer(
                             contentDescription = "Text"
                         )
                     }
-            }
+                }
             )
         }
     ) { padding ->
         ShowBeerList(
             modifier = Modifier.padding(padding),
-            pagedSearch = flow
+            pagedSearch = flow,
+            onBeerClick = onBeerClick
         )
     }
 }
