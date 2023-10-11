@@ -9,5 +9,9 @@ fun BeerDto.toBeerBo() = BeerBo(
     id = id ?: 0,
     name = name ?: "",
     tagLine = tagline ?: "",
-    imageUrl = imageUrl ?: ""
+    description = description ?: "",
+    imageUrl = imageUrl ?: "",
+    ibu = ibu,
+    foodPairing = foodPairing ?: listOf(),
+    brewersTips = brewersTips ?: ""
 )

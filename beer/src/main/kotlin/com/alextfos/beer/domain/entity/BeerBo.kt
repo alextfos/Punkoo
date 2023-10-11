@@ -4,5 +4,9 @@ data class BeerBo(
     val id: Int,
     val name: String,
     val tagLine: String,
-    val imageUrl: String
+    val description: String,
+    val imageUrl: String,
+    val ibu: Float?,
+    val foodPairing: List<String>,
+    val brewersTips: String
 )
