@@ -29,4 +29,14 @@ sealed class Screen(
         route = "SearchBeer",
         arguments = emptyList()
     )
+
+    companion object {
+        fun findRoute(route: String?): Screen {
+            return if (route?.contains(BeerDetail.route) == true) {
+                BeerDetail
+            } else {
+                BeerList
+            }
+        }
+    }
 }
