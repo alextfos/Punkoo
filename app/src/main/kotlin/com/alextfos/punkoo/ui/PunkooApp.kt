@@ -72,10 +72,10 @@ fun PunkooApp(
                         scrollBehavior = scrollBehavior
                     )
                 }
-            ) {
+            ) { padding ->
                 Box(
                     modifier = Modifier
-                        .padding(it)
+                        .padding(padding)
                 ) {
                     PunkooNavigation(navController) { navBuilder ->
                         navBuilder.addBeerListScreen {
