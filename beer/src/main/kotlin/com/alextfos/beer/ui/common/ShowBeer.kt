@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,6 +27,9 @@ import coil.compose.AsyncImage
 import com.alextfos.beer.domain.SampleBeerBuilder
 import com.alextfos.beer.domain.entity.BeerBo
 import com.alextfos.punkoo.common.R
+import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
+import com.alextfos.punkoo.styles.ui.theme.ThemeType
+import com.alextfos.punkoo.styles.ui.theme.spacing
 
 @Composable
 fun ShowBeer(beer: BeerBo) {
@@ -32,27 +37,36 @@ fun ShowBeer(beer: BeerBo) {
         modifier = Modifier
             .height(160.dp)
     ) {
-        Card(
+        ElevatedCard(
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(100.dp)
-                .padding(16.dp)
-                .background(MaterialTheme.colorScheme.tertiary)
-                .align(Alignment.BottomCenter)
+                .padding(MaterialTheme.spacing.globalPadding)
+                .background(Color.Transparent)
+                .align(Alignment.BottomCenter),
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+            )
         ) {
             Row(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.Gray)
+                    .padding(MaterialTheme.spacing.globalHalfPadding)
             ) {
                 Text(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier
+                        .weight(1f),
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                     text = beer.name
                 )
                 Spacer(Modifier.width(120.dp))
                 Text(
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier
+                        .weight(1f)
+                        .background(Color.Transparent),
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                     text = beer.tagLine
                 )
@@ -71,13 +85,32 @@ fun ShowBeer(beer: BeerBo) {
 
 }
 
-@Preview
+@Preview(showBackground = true, name = "Dark")
 @Composable
-fun SearchItemPreview() {
-    ShowBeer(
-        SampleBeerBuilder()
-            .withName("Long nameeee nameee nameeee")
-            .withTagLine("Super beeeeer beeeer beeeeeer")
-            .buildSingle()
-    )
+fun SearchItemDarkPreview() {
+    PunkooTheme(
+        ThemeType.DARK
+    ) {
+        ShowBeer(
+            SampleBeerBuilder()
+                .withName("Long nameeee nameee nameeee")
+                .withTagLine("Super beeeeer beeeer beeeeeer")
+                .buildSingle()
+        )
+    }
+}
+
+@Preview(showBackground = true, name = "Light")
+@Composable
+fun SearchItemLightPreview() {
+    PunkooTheme(
+        ThemeType.LIGHT
+    ) {
+        ShowBeer(
+            SampleBeerBuilder()
+                .withName("Long nameeee nameee nameeee")
+                .withTagLine("Super beeeeer beeeer beeeeeer")
+                .buildSingle()
+        )
+    }
 }

@@ -8,7 +8,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 data class Spacing(
-    val cornerRadius: Dp = 4.dp
+    val cornerRadius: Dp = 4.dp,
+    val globalPadding: Dp = 16.dp,
+    val globalHalfPadding: Dp = 8.dp
 )
 
 val LocalSpacing = compositionLocalOf { Spacing() }
