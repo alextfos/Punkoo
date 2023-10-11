@@ -33,7 +33,6 @@ import com.alextfos.punkoo.styles.ui.theme.ThemeType
 
 
 @OptIn(ExperimentalMaterial3Api::class)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun PunkooApp(
     navController: NavHostController = rememberNavController(),
