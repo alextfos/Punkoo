@@ -61,6 +61,7 @@ fun ShowBeer(beer: BeerBo, onBeerClick: (Int)-> Unit) {
                 Text(
                     modifier = Modifier
                         .weight(1f),
+                    maxLines = 2,
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                     text = beer.name
                 )
@@ -70,6 +71,7 @@ fun ShowBeer(beer: BeerBo, onBeerClick: (Int)-> Unit) {
                         .weight(1f)
                         .background(Color.Transparent),
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    maxLines = 2,
                     text = beer.tagLine
                 )
             }
