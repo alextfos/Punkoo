@@ -2,7 +2,6 @@ package com.alextfos.punkoo.di
 
 import com.alextfos.beer.data.BeerRepository
 import com.alextfos.beer.data.api.BeerApi
-import com.alextfos.beer.domain.usecase.GetRandomBeerUseCase
 import com.alextfos.beer.domain.usecase.SearchUseCase
 import dagger.Module
 import dagger.Provides
@@ -19,11 +18,6 @@ class BeerModule {
     @Singleton
     fun provideSearchUseCase(beerRepository: BeerRepository) =
         SearchUseCase(beerRepository)
-
-    @Provides
-    @Singleton
-    fun provideRandomBeerUseCase(beerRepository: BeerRepository) =
-        GetRandomBeerUseCase(beerRepository)
 
     @Singleton
     @Provides
