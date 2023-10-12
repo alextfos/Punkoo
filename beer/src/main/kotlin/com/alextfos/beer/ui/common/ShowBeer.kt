@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,11 +30,14 @@ import com.alextfos.punkoo.styles.ui.theme.PunkooTheme
 import com.alextfos.punkoo.styles.ui.theme.ThemeType
 import com.alextfos.punkoo.styles.ui.theme.spacing
 
+const val TAG = "ShowBeer"
+
 @Composable
 fun ShowBeer(beer: BeerUi, onBeerClick: (BeerUi)-> Unit) {
     Box(
         modifier = Modifier
             .height(160.dp)
+            .testTag(TAG)
             .clickable { onBeerClick(beer) }
     ) {
         ElevatedCard(

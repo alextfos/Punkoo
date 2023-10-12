@@ -27,4 +27,6 @@ hiltNavigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref
 paging = { module = "androidx.paging:paging-compose", version.ref = "paging" }
 hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
-hiltPlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt"}
+hiltPlugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+composeTest = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+composeManifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }

@@ -76,4 +76,6 @@ dependencies {
     androidTestImplementation(testLibs.junitTest)
     androidTestImplementation(androidLibs.uiTestJunit4)
     testImplementation(testLibs.hamcrest)
+    androidTestImplementation(androidLibs.composeTest)
+    androidTestImplementation(androidLibs.composeManifest)
 }
