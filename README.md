@@ -21,3 +21,9 @@ Version Catalog is included to improve dependencies management
 
 ### Dependencies versions
 All versions are up to date
+
+# TODO
+- Flow tests with Turbine
+- UI Compose Tests with Paparazzi
+- SearchBar
+- 
