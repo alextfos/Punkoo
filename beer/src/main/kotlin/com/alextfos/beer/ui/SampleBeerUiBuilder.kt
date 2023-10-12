@@ -1,68 +1,69 @@
-package com.alextfos.beer.domain
+package com.alextfos.beer.ui
 
 import com.alextfos.beer.domain.entity.BeerBo
+import com.alextfos.beer.ui.common.BeerUi
 
-class SampleBeerBoBuilder {
+class SampleBeerUiBuilder {
     private var id = 1
     private var name = "Sample beer"
     private var tagLine = "Sample tag line"
     private var description = " This beer is amazing bla bla bla bla amzing glu glu glu"
     private var imageUrl = "https://images.punkapi.com/v2/keg.png"
-    private var ibu = 1.0f
+    private var ibu = "1.0"
     private var foodPairing = mutableListOf("Oysters", "Cheese")
     private var brewersTips = "Tips for happy drinking"
 
     private var numElements: Int = 1
 
-    fun withName(name: String): SampleBeerBoBuilder {
+    fun withName(name: String): SampleBeerUiBuilder {
         this.name = name
 
         return this
     }
 
-    fun withTagLine(tagLine: String): SampleBeerBoBuilder {
+    fun withTagLine(tagLine: String): SampleBeerUiBuilder {
         this.tagLine = tagLine
 
         return this
     }
 
-    fun withDescription(description: String): SampleBeerBoBuilder {
+    fun withDescription(description: String): SampleBeerUiBuilder {
         this.description = description
 
         return this
     }
 
-    fun withImageUrl(imageUrl: String): SampleBeerBoBuilder {
+    fun withImageUrl(imageUrl: String): SampleBeerUiBuilder {
         this.imageUrl = imageUrl
 
         return this
     }
 
-    fun withIbu(ibu: Float): SampleBeerBoBuilder {
+    fun withIbu(ibu: String): SampleBeerUiBuilder {
         this.ibu = ibu
 
         return this
     }
 
-    fun withFoodPairing(foodPairing: MutableList<String>): SampleBeerBoBuilder {
+    fun withFoodPairing(foodPairing: MutableList<String>): SampleBeerUiBuilder {
         this.foodPairing = foodPairing
 
         return this
     }
 
-    fun addFoodPairing(foodPairing: String): SampleBeerBoBuilder {
+    fun addFoodPairing(foodPairing: String): SampleBeerUiBuilder {
         this.foodPairing.add(foodPairing)
 
         return this
     }
 
-    fun withNumElements(numElements: Int): SampleBeerBoBuilder {
+    fun withNumElements(numElements: Int): SampleBeerUiBuilder {
         this.numElements = numElements
 
         return this
     }
 
-    fun buildSingle() = BeerBo(
+    fun buildSingle() = BeerUi(
         id = id,
         name = name,
         tagLine = tagLine,
@@ -73,8 +74,8 @@ class SampleBeerBoBuilder {
         brewersTips = brewersTips
     )
 
-    fun buildList(): List<BeerBo> {
-        val list = mutableListOf<BeerBo>()
+    fun buildList(): List<BeerUi> {
+        val list = mutableListOf<BeerUi>()
 
         for (i in 0..numElements) {
             list.add(buildSingle())

@@ -1,14 +1,18 @@
 package com.alextfos.beer.ui.beerlist
 
-import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import com.alextfos.punkoo.common.ui.navigation.Screen
+import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.alextfos.beer.ui.common.BeerUi
 
-fun NavGraphBuilder.addBeerListScreen(navController: NavController) {
-    composable(
-        route = Screen.BeerList.route
+@Composable
+fun BeerListDrawer(
+    viewModel: BeerListViewModel = hiltViewModel(),
+    onBeerClick: (BeerUi) -> Unit
+) {
+    ShowBeerList(
+        pagedSearch = viewModel.getBeerList()
     ) {
-        BeerListDrawer()
+        viewModel.selectBeer(it)
+        onBeerClick.invoke(it)
     }
 }

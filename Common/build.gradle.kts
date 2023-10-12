@@ -70,7 +70,6 @@ dependencies {
     // Third Party dependencies
     api(thirdPartyLibs.timber)
     implementation(thirdPartyLibs.coil)
-    implementation(thirdPartyLibs.arrowCore)
 
     // Test dependencies
     testImplementation(testLibs.coroutinesTest)
@@ -79,4 +78,5 @@ dependencies {
     testImplementation(testLibs.junit)
     androidTestImplementation(testLibs.junitTest)
     androidTestImplementation(testLibs.espresso)
+    testImplementation(testLibs.hamcrest)
 }

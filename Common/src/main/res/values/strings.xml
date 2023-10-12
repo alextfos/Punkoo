@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="loading">Cargando</string>
+    <string name="loading">Loading</string>
     <string name="error_unknown_title">Error</string>
-    <string name="error_unknown_text">Lo sentimos, este contenido no está disponible en este momento</string>
-    <string name="error_empty_title">Información no disponible</string>
-    <string name="error_empty_text">Lo sentimos, ha habido un problema cargando la información</string>
-    <string name="error_retry">Intentar de nuevo</string>
-    <string name="error_image_description">Error imagen</string>
-    <string name="no_results_available">No hay resultados disponibles</string>
+    <string name="error_unknown_text">Sorry, The content it\'s not available at this moment</string>
+    <string name="error_empty_title">Information not available</string>
+    <string name="error_empty_text">Sorry, A problem occurred loading information</string>
+    <string name="error_retry">Retry</string>
+    <string name="error_image_description">Error</string>
+    <string name="no_results_available">There isn\'t results</string>
+    <string name="action_search">Search</string>
+    <string name="back_button">Back</string>
+    <string name="beer_detail_ibu">IBU: %1$s</string>
+    <string name="beer_detail_description_title">Description</string>
+    <string name="beer_detail_food_pairing_title">Food Pairing</string>
 </resources>

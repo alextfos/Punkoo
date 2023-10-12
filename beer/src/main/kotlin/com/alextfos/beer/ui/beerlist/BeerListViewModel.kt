@@ -1,46 +1,36 @@
 package com.alextfos.beer.ui.beerlist
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import arrow.core.Either
-import arrow.core.left
+import androidx.paging.map
+import com.alextfos.beer.di.BeerDetailContainer
 import com.alextfos.beer.domain.entity.BeerBo
+import com.alextfos.beer.domain.mapper.toBeerUi
 import com.alextfos.beer.domain.usecase.GetBeerListUseCase
-import com.alextfos.beer.ui.common.BeerBoFlowState
-import com.alextfos.punkoo.common.ext.toError
+import com.alextfos.beer.ui.common.BeerUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import javax.inject.Named
 
 @HiltViewModel
 class BeerListViewModel @Inject constructor(
-    private val getBeerListUseCase: GetBeerListUseCase
+    private val getBeerListUseCase: GetBeerListUseCase,
+    @Named("beerDetail") val beerDetailContainer: BeerDetailContainer
 ) : ViewModel() {
 
-    var state by mutableStateOf(BeerBoFlowState())
-        private set
-
-    /*
-    init {
-        getBeerListUnUseCase()
+    fun selectBeer(beerUi: BeerUi) {
+        beerDetailContainer.beerUi = beerUi
     }
-    */
-     private fun getBeerListUnUseCase() {
-         state = BeerBoFlowState(loading = true)
-         state = try {
-             val result = getBeerListUseCase.invoke().cachedIn(viewModelScope)
-             BeerBoFlowState(beerList = Either.Right(result))
-         } catch (t: Throwable) {
-             BeerBoFlowState(beerList = t.toError().left())
-         }
-     }
 
-    fun getBeerList() : Flow<PagingData<BeerBo>> {
-        return  getBeerListUseCase.invoke().cachedIn(viewModelScope)
+    fun getBeerList() : Flow<PagingData<BeerUi>> {
+        return  getBeerListUseCase.invoke().map {
+            it.map {
+                it.toBeerUi()
+            }
+        }.cachedIn(viewModelScope)
     }
 }

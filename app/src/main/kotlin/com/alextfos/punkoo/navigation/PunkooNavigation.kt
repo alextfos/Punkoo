@@ -1,12 +1,13 @@
-package com.alextfos.punkoo.common.ui.navigation
+package com.alextfos.punkoo.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.alextfos.beer.navigation.Screen
 
 @Composable
-fun CreateNavigation(
+fun PunkooNavigation(
     navController: NavHostController,
     initNavigation: (NavGraphBuilder)->Unit
 ) {

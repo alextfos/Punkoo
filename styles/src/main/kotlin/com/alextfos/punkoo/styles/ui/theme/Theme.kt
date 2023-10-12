@@ -85,7 +85,8 @@ fun PunkooTheme(
     CompositionLocalProvider(LocalSpacing provides Spacing()) {
         MaterialTheme(
             colorScheme = colors,
-            content = content
+            content = content,
+            typography = typography
         )
     }
 }

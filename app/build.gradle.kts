@@ -122,7 +122,6 @@ dependencies {
 
     // Third Party dependencies
     implementation(thirdPartyLibs.coil)
-    implementation(thirdPartyLibs.arrowCore)
 
     // Test dependencies
     testImplementation(testLibs.junit)
