@@ -25,5 +25,5 @@ All versions are up to date
 # TODO
 - Flow tests with Turbine
 - UI Compose Tests with Paparazzi
+- Test Injection with Hilt
 - SearchBar
-- 
