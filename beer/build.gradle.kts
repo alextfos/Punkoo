@@ -64,6 +64,8 @@ dependencies {
 
     // Third Party dependencies
     implementation(thirdPartyLibs.coil)
+    implementation(networkingLibs.loggingInterceptor)
+    implementation(networkingLibs.retrofitConverter)
 
     // Test dependencies
     testImplementation(testLibs.coroutinesTest)
@@ -73,5 +75,5 @@ dependencies {
     testImplementation(testLibs.mockk)
     androidTestImplementation(testLibs.junitTest)
     androidTestImplementation(androidLibs.uiTestJunit4)
-
+    testImplementation(testLibs.hamcrest)
 }

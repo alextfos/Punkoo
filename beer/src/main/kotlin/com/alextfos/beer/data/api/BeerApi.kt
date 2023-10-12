@@ -12,7 +12,4 @@ interface BeerApi {
         @Query("page") page: Int? = null,
         @Query("per_page") pageSize: Int? = null
     ): Response<List<BeerDto>>
-
-  @GET("$versionApi/beers/random")
-  suspend fun getRandomBeer(): Response<List<BeerDto>>
 }

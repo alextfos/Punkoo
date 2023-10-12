@@ -78,4 +78,5 @@ dependencies {
     testImplementation(testLibs.junit)
     androidTestImplementation(testLibs.junitTest)
     androidTestImplementation(testLibs.espresso)
+    testImplementation(testLibs.hamcrest)
 }
